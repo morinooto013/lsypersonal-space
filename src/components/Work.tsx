@@ -70,7 +70,7 @@ export default function Work() {
           </p>
 
           {/* 两张可点击活动图 */}
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <a href="https://tokyomidnight.tokiwavalley.com/" target="_blank" rel="noopener noreferrer"
               className="block rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform"
             >
