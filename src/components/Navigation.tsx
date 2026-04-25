@@ -133,16 +133,21 @@ export default function Navigation() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full z-50 w-72 flex flex-col py-10 px-6 transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full z-50 w-72 flex flex-col py-10 px-5 transition-transform duration-300 card-glass ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
-        style={{ background: 'rgba(20,20,24,0.85)', backdropFilter: 'blur(24px)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}
+        style={{ borderRadius: 0, borderRight: 'none', borderTop: 'none', borderBottom: 'none' }}
       >
-        <div className="flex items-center justify-between mb-10">
-          <span className="text-foreground text-sm font-medium tracking-wide">Contact</span>
+        <div className="flex items-center justify-between mb-8">
+          <span
+            className="text-foreground text-xl font-normal"
+            style={{ fontFamily: "'Instrument Serif', serif" }}
+          >
+            Contact
+          </span>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="text-muted-foreground hover:text-foreground transition-colors p-1"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 6 6 18M6 6l12 12"/>
@@ -150,17 +155,17 @@ export default function Navigation() {
           </button>
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           {contacts.map((c) => (
             <div
               key={c.label}
-              className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors group"
+              className="liquid-glass flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:text-foreground transition-colors group cursor-default"
             >
-              <span className="shrink-0 opacity-70">{c.icon}</span>
+              <span className="shrink-0 opacity-60">{c.icon}</span>
               <span className="flex-1 text-xs">{c.label}</span>
               <button
                 onClick={() => handleCopy(c.label)}
-                className="shrink-0 opacity-0 group-hover:opacity-60 hover:!opacity-100 transition-opacity"
+                className="shrink-0 opacity-0 group-hover:opacity-50 hover:!opacity-100 transition-opacity"
                 title="复制"
               >
                 {copied === c.label ? <CheckIcon /> : <CopyIcon />}
