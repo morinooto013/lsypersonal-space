@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
 
       <div className="animate-fade-rise-delay mt-8 max-w-2xl space-y-1">
-        <p className="text-sm sm:text-base text-foreground/90 leading-relaxed whitespace-nowrap">
+        <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">
           有 AI 产品内容和运营背景。通过 AI，让内容生产和实现变得更简单、更高效。
         </p>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
