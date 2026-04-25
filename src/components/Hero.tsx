@@ -6,22 +6,22 @@ export default function Hero() {
     >
       <div className="animate-fade-rise mb-2">
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl font-normal leading-tight"
-          style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: '-1px' }}
+          className="text-3xl sm:text-4xl font-normal leading-tight"
+          style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: '-0.5px' }}
         >
           Hi, 我是<span style={{ color: 'rgba(255,255,255,1)' }}>林思懿</span>
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground mt-2" style={{ fontFamily: "'Instrument Serif', serif" }}>
+        <p className="text-xl sm:text-2xl text-muted-foreground mt-3" style={{ fontFamily: "'Instrument Serif', serif" }}>
           Hi, I'm Lin Siyi.
         </p>
       </div>
 
-      <div className="animate-fade-rise-delay mt-8 max-w-2xl space-y-2">
+      <div className="animate-fade-rise-delay mt-8 max-w-2xl space-y-1">
         <p className="text-sm sm:text-base text-foreground/90 leading-relaxed whitespace-nowrap">
           有 AI 产品内容和运营背景。通过 AI，让内容生产和实现变得更简单、更高效。
         </p>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-          I work in AI product content and operations.
+          I work in AI product content and operations.<br />
           Using AI to make things simpler and more efficient — from content to execution.
         </p>
       </div>
