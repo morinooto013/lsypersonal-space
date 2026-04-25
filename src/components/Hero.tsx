@@ -16,7 +16,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="animate-fade-rise-delay mt-8 max-w-2xl w-full space-y-2">
+      <div className="animate-fade-rise-delay mt-8 max-w-3xl w-full space-y-2">
         <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
           有 AI 产品内容和运营背景。关注新技术的发展，持续尝试并探索其在实际工作中的应用
         </p>
