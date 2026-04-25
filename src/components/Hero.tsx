@@ -16,13 +16,12 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="animate-fade-rise-delay mt-8 max-w-2xl space-y-1">
+      <div className="animate-fade-rise-delay mt-8 max-w-2xl w-full space-y-1">
         <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">
-          有 AI 产品内容和运营背景。通过 AI，让内容生产和实现变得更简单、更高效。
+          有 AI 产品内容和运营背景。关注如何用 AI 提高内容生产与执行效率
         </p>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-          I work in AI product content and operations.<br />
-          Using AI to make things simpler and more efficient — from content to execution.
+          I work in AI product content and operations, focusing on using AI to improve efficiency in content creation and execution.
         </p>
       </div>
 

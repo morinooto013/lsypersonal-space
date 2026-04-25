@@ -1,11 +1,18 @@
-const jobs = [
+import React from 'react'
+
+const hi = (text: string) => (
+  <span style={{ color: 'rgba(255,255,255,0.88)' }}>{text}</span>
+)
+
+const jobs: { company: string; role: string; period: string; bullets: React.ReactNode[] }[] = [
   {
     company: '北京生数科技',
     role: '海外区域运营（日本市场）',
     period: '2025.03 - 至今',
     bullets: [
       'AI产品内容拆解与表达：围绕模型能力与新功能（如视频生成、一键MV等），输出功能解读、玩法说明及案例内容，提升用户理解与使用转化',
-      '创作者内容策略搭建：建立创作者分层机制，拆解头部内容结构并沉淀可复用内容模型，推动站外曝光提升300%+，区域收入增长200%+',
+      <>创作者内容策略搭建：建立创作者分层机制，拆解头部内容结构并沉淀可复用内容模型，推动站外曝光提升{hi('300%+')}，区域收入增长{hi('200%+')}</>,
+      <>社媒与社群运营：负责X等平台内容策划、文案与视觉设计，持续跟踪内容表现与用户行为：{hi('多条内容曝光达5万+')}，并基于数据复盘提炼爆款内容模型，反哺内容策略。</>,
       '活动与内容机制设计：策划并执行多场线上/线下内容活动，通过主题设计与创作引导提升内容质量与用户参与度',
       '数据驱动内容优化：跟踪内容表现与用户行为数据，持续复盘并优化内容结构与表达方式',
     ],
@@ -15,8 +22,8 @@ const jobs = [
     role: '用户增长中心实习生',
     period: '2024.06 - 2024.08',
     bullets: [
-      '基于日本用户偏好输出20+日语推广内容，构建本地化表达体系，总结高转化文案结构与内容',
-      '制作100+短视频内容，优化"前3秒吸引+剧情推进"结构，单条视频最高播放量达10w+',
+      <>基于日本用户偏好输出{hi('20+')}日语推广内容，构建本地化表达体系，总结高转化文案结构与内容</>,
+      <>制作{hi('100+')}短视频内容，优化"前3秒吸引+剧情推进"结构，单条视频最高播放量达{hi('10w+')}</>,
     ],
   },
 ]
@@ -57,7 +64,7 @@ export default function Experience() {
         {/* Work */}
         <div className="space-y-6 mb-12">
           {jobs.map((job) => (
-            <div key={job.company} className="card-glass rounded-2xl p-8">
+            <div key={job.company} className="card-glass rounded-2xl p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-5">
                 <div>
                   <p className="text-foreground text-sm font-medium">{job.company}</p>
