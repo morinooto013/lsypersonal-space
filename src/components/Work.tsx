@@ -10,7 +10,7 @@ export default function Work() {
         </h2>
         <p className="text-muted-foreground text-sm mb-16">作品集持续更新中……</p>
 
-        <div className="liquid-glass rounded-2xl p-12 flex flex-col items-center justify-center text-center min-h-[300px]">
+        <div className="card-glass rounded-2xl p-12 flex flex-col items-center justify-center text-center min-h-[300px]">
           <p className="text-muted-foreground text-sm">Coming soon</p>
         </div>
       </div>

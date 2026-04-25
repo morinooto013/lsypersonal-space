@@ -10,21 +10,8 @@ export default function About() {
           About
         </h2>
 
-        {/* Contact */}
-        <div className="liquid-glass rounded-2xl p-6 mb-8 flex flex-wrap gap-6 text-sm text-muted-foreground">
-          <span>📞 13396562993</span>
-          <span>✉️ l2714864534@qq.com</span>
-        </div>
-
-        {/* Profile */}
-        <div className="liquid-glass rounded-2xl p-8 mb-8 space-y-4 text-sm text-muted-foreground leading-relaxed">
-          <p>・具备AI产品理解与内容运营的复合背景，能够快速理解产品逻辑并转化为清晰易懂的内容表达。</p>
-          <p>・有创作者生态与内容增长经验，擅长基于用户行为与数据反馈优化内容策略。</p>
-          <p>・具备较强的结构化表达能力，能够输出兼顾专业性与可读性的内容（如案例解析、功能解读等）。</p>
-        </div>
-
-        {/* Education */}
-        <div className="liquid-glass rounded-2xl p-8 mb-8">
+        {/* Education - top */}
+        <div className="card-glass rounded-2xl p-8 mb-8">
           <h3 className="text-foreground text-base font-medium mb-6">教育背景</h3>
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
@@ -36,32 +23,37 @@ export default function About() {
             </div>
             <div className="border-t border-white/10" />
             <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
-              <div>
-                <p className="text-foreground text-sm">浙江农林大学 · 城市管理 · 全日制本科</p>
-              </div>
+              <p className="text-foreground text-sm">浙江农林大学 · 城市管理 · 全日制本科</p>
               <span className="text-muted-foreground text-xs whitespace-nowrap">2019.09 – 2023.06</span>
             </div>
           </div>
         </div>
 
+        {/* Profile */}
+        <div className="card-glass rounded-2xl p-8 mb-8 space-y-4 text-sm text-muted-foreground leading-relaxed">
+          <p>・具备AI产品理解与内容运营的复合背景，能够快速理解产品逻辑并转化为清晰易懂的内容表达。</p>
+          <p>・有创作者生态与内容增长经验，擅长基于用户行为与数据反馈优化内容策略。</p>
+          <p>・具备较强的结构化表达能力，能够输出兼顾专业性与可读性的内容（如案例解析、功能解读等）。</p>
+        </div>
+
         {/* Skills */}
-        <div className="liquid-glass rounded-2xl p-8">
+        <div className="card-glass rounded-2xl p-8">
           <h3 className="text-foreground text-base font-medium mb-6">个人技能</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-muted-foreground">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-muted-foreground">
             <div>
-              <p className="text-foreground text-xs mb-1">AI 与技术理解</p>
+              <p className="text-foreground/80 text-xs mb-1.5">AI 与技术理解</p>
               <p>能使用 Claude Code、OpenClaw 等 Agent 提高生产效率，了解 Prompt 设计与基础调用逻辑</p>
             </div>
             <div>
-              <p className="text-foreground text-xs mb-1">内容创作</p>
+              <p className="text-foreground/80 text-xs mb-1.5">内容创作</p>
               <p>擅长技术内容拆解（案例解析 / 功能解读 / 使用说明）</p>
             </div>
             <div>
-              <p className="text-foreground text-xs mb-1">工具能力</p>
+              <p className="text-foreground/80 text-xs mb-1.5">工具能力</p>
               <p>PS / 剪映 / 数据分析</p>
             </div>
             <div>
-              <p className="text-foreground text-xs mb-1">语言</p>
+              <p className="text-foreground/80 text-xs mb-1.5">语言</p>
               <p>日语 N1 / 英语六级</p>
             </div>
           </div>

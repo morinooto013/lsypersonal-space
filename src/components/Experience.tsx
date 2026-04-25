@@ -57,7 +57,7 @@ export default function Experience() {
         {/* Work */}
         <div className="space-y-6 mb-12">
           {jobs.map((job) => (
-            <div key={job.company} className="liquid-glass rounded-2xl p-8">
+            <div key={job.company} className="card-glass rounded-2xl p-8">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-5">
                 <div>
                   <p className="text-foreground text-sm font-medium">{job.company}</p>
@@ -85,7 +85,7 @@ export default function Experience() {
         </h3>
         <div className="space-y-4">
           {campus.map((item) => (
-            <div key={item.role} className="liquid-glass rounded-2xl p-6">
+            <div key={item.role} className="card-glass rounded-2xl p-6">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-3">
                 <div>
                   <p className="text-foreground text-sm font-medium">{item.org} · {item.role}</p>
