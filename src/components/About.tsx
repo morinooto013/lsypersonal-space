@@ -11,7 +11,7 @@ export default function About() {
         </h2>
 
         {/* Education - top */}
-        <div className="card-glass rounded-2xl p-8 mb-8">
+        <div className="glass-card rounded-2xl p-8 mb-8">
           <h3 className="text-foreground text-base font-medium mb-6">教育背景</h3>
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
@@ -29,15 +29,22 @@ export default function About() {
           </div>
         </div>
 
-        {/* Profile */}
-        <div className="card-glass rounded-2xl p-8 mb-8 space-y-4 text-sm text-muted-foreground leading-relaxed">
-          <p>・具备AI产品理解与内容运营的复合背景，能够快速理解产品逻辑并转化为清晰易懂的内容表达。</p>
-          <p>・有创作者生态与内容增长经验，擅长基于用户行为与数据反馈优化内容策略。</p>
-          <p>・具备较强的结构化表达能力，能够输出兼顾专业性与可读性的内容（如案例解析、功能解读等）。</p>
+        {/* Profile + Avatar */}
+        <div className="glass-card rounded-2xl p-8 mb-8 flex flex-col sm:flex-row gap-8 items-start">
+          <img
+            src="/avatar.jpg"
+            alt="林思懿"
+            className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl object-cover shrink-0 border border-white/15 shadow-lg"
+          />
+          <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+            <p>・具备AI产品理解与内容运营的复合背景，能够快速理解产品逻辑并转化为清晰易懂的内容表达。</p>
+            <p>・有创作者生态与内容增长经验，擅长基于用户行为与数据反馈优化内容策略。</p>
+            <p>・具备较强的结构化表达能力，能够输出兼顾专业性与可读性的内容（如案例解析、功能解读等）。</p>
+          </div>
         </div>
 
         {/* Skills */}
-        <div className="card-glass rounded-2xl p-8">
+        <div className="glass-card rounded-2xl p-8">
           <h3 className="text-foreground text-base font-medium mb-6">个人技能</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-muted-foreground">
             <div>
