@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -19,7 +19,6 @@ const contacts = [
   {
     label: '2714864534',
     icon: (
-      /* QQ app icon — penguin head silhouette */
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2a5.5 5.5 0 0 0-5.5 5.5c0 1.04.29 2.01.79 2.84C6.1 11.04 5 12.4 5 14c0 1.1.45 2.1 1.18 2.82C5.47 17.4 5 18.45 5 19.5c0 .28.22.5.5.5h13c.28 0 .5-.22.5-.5 0-1.05-.47-2.1-1.18-2.68A3.99 3.99 0 0 0 19 14c0-1.6-1.1-2.96-2.29-3.66.5-.83.79-1.8.79-2.84A5.5 5.5 0 0 0 12 2zm-1.5 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm3 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-1.5 3c-.83 0-1.5.34-1.5.75s.67.75 1.5.75 1.5-.34 1.5-.75S12.83 13 12 13z"/>
       </svg>
@@ -28,7 +27,6 @@ const contacts = [
   {
     label: 'morinooto13',
     icon: (
-      /* WeChat bubble icon */
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
         <path d="M9.5 4C5.36 4 2 6.91 2 10.5c0 1.98 1.01 3.75 2.6 4.97L4 17.5l2.37-1.18A8.4 8.4 0 0 0 9.5 17c.17 0 .34 0 .5-.01A5.98 5.98 0 0 1 10 15c0-3.31 3.13-6 7-6 .17 0 .34 0 .5.01C16.74 6.63 13.4 4 9.5 4zM7 9.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5 1.5c-3.31 0-6 2.24-6 5s2.69 5 6 5c.9 0 1.75-.19 2.5-.52L22 21.5l-.5-2.1A4.93 4.93 0 0 0 23 16c0-2.76-2.69-5-6-5zm-1.5 5a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm3 0a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"/>
       </svg>
@@ -62,9 +60,8 @@ function CheckIcon() {
 
 export default function Navigation() {
   const [active, setActive] = useState('Home')
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [copied, setCopied] = useState<string | null>(null)
-  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const sections = navLinks.map((l) => document.querySelector(l.href))
@@ -84,16 +81,6 @@ export default function Navigation() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [])
-
   function handleCopy(label: string) {
     navigator.clipboard.writeText(label).then(() => {
       setCopied(label)
@@ -102,67 +89,86 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full nav-glass">
-      <div className="flex flex-row justify-between items-center px-8 py-5 max-w-7xl mx-auto">
-        <span
-          className="text-2xl tracking-tight text-foreground"
-          style={{ fontFamily: "'Instrument Serif', serif" }}
-        >
-          MorinoOto
-        </span>
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 w-full nav-glass">
+        <div className="flex flex-row justify-between items-center px-8 py-5 max-w-7xl mx-auto">
+          <span
+            className="text-2xl tracking-tight text-foreground"
+            style={{ fontFamily: "'Instrument Serif', serif" }}
+          >
+            MorinoOto
+          </span>
 
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setActive(link.label)}
-              className={`text-sm transition-colors hover:text-foreground ${
-                active === link.label ? 'text-foreground' : 'text-muted-foreground'
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setActive(link.label)}
+                className={`text-sm transition-colors hover:text-foreground ${
+                  active === link.label ? 'text-foreground' : 'text-muted-foreground'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
 
-        <div className="relative" ref={dropdownRef}>
           <button
-            onClick={() => setDropdownOpen((v) => !v)}
-            className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform flex items-center gap-2"
+            onClick={() => setSidebarOpen(true)}
+            className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform"
           >
             Contact
-            <svg
-              width="12" height="12" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-              className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}
-            >
-              <path d="m6 9 6 6 6-6"/>
+          </button>
+        </div>
+      </nav>
+
+      {/* Overlay */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full z-50 w-72 flex flex-col py-10 px-6 transition-transform duration-300 ${
+          sidebarOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{ background: 'rgba(20,20,24,0.85)', backdropFilter: 'blur(24px)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}
+      >
+        <div className="flex items-center justify-between mb-10">
+          <span className="text-foreground text-sm font-medium tracking-wide">Contact</span>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 6 6 18M6 6l12 12"/>
             </svg>
           </button>
+        </div>
 
-          {dropdownOpen && (
-            <div className="absolute right-0 mt-3 w-60 rounded-2xl overflow-hidden dropdown-glass py-2">
-              {contacts.map((c) => (
-                <div
-                  key={c.label}
-                  className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors group"
-                >
-                  <span className="shrink-0 opacity-70">{c.icon}</span>
-                  <span className="flex-1 text-xs">{c.label}</span>
-                  <button
-                    onClick={() => handleCopy(c.label)}
-                    className="shrink-0 opacity-0 group-hover:opacity-60 hover:!opacity-100 transition-opacity text-muted-foreground hover:text-foreground"
-                    title="复制"
-                  >
-                    {copied === c.label ? <CheckIcon /> : <CopyIcon />}
-                  </button>
-                </div>
-              ))}
+        <div className="flex flex-col gap-1">
+          {contacts.map((c) => (
+            <div
+              key={c.label}
+              className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors group"
+            >
+              <span className="shrink-0 opacity-70">{c.icon}</span>
+              <span className="flex-1 text-xs">{c.label}</span>
+              <button
+                onClick={() => handleCopy(c.label)}
+                className="shrink-0 opacity-0 group-hover:opacity-60 hover:!opacity-100 transition-opacity"
+                title="复制"
+              >
+                {copied === c.label ? <CheckIcon /> : <CopyIcon />}
+              </button>
             </div>
-          )}
+          ))}
         </div>
       </div>
-    </nav>
+    </>
   )
 }

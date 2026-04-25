@@ -12,7 +12,7 @@ export default function Hero() {
           <span style={{ color: 'rgba(255,255,255,0.78)' }}>Hi, 我是</span><span style={{ color: 'rgba(255,255,255,1)' }}>林思懿</span>
         </h1>
         <p className="text-xl sm:text-2xl text-muted-foreground mt-3" style={{ fontFamily: "'Instrument Serif', serif" }}>
-          Hi, I'm Lin Siyi.
+          Hi, I'm Morinooto.
         </p>
       </div>
 

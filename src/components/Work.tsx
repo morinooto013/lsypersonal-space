@@ -17,24 +17,24 @@ export default function Work() {
           >
             内容制作
           </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-2xl">
+          <p className="text-muted-foreground text-sm leading-relaxed mb-8 whitespace-nowrap">
             具备一定的设计审美与内容制作能力，能够将产品功能转化为通俗易懂的表达形式，同时支持活动海报等视觉内容的产出。
           </p>
 
           {/* 漫画三图 */}
           <div className="card-glass rounded-2xl p-6 mb-5">
             <div className="grid grid-cols-3 gap-3 mb-5">
-              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
-                <img src="/work/manga1.png" alt="参考生图漫画1" className="w-full h-full object-contain" />
+              <div className="rounded-xl overflow-y-auto bg-white/5" style={{ maxHeight: '420px' }}>
+                <img src="/work/manga1.png" alt="参考生图漫画1" className="w-full object-cover object-top" />
               </div>
-              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
-                <img src="/work/manga2.png" alt="参考生图漫画2" className="w-full h-full object-contain" />
+              <div className="rounded-xl overflow-y-auto bg-white/5" style={{ maxHeight: '420px' }}>
+                <img src="/work/manga2.png" alt="参考生图漫画2" className="w-full object-cover object-top" />
               </div>
-              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
-                <img src="/work/manga3.png" alt="参考生图漫画3" className="w-full h-full object-contain" />
+              <div className="rounded-xl overflow-y-auto bg-white/5" style={{ maxHeight: '420px' }}>
+                <img src="/work/manga3.png" alt="参考生图漫画3" className="w-full object-cover object-top" />
               </div>
             </div>
-            <p className="text-muted-foreground text-xs leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               在宣推产品「参考生图」功能时，运用 AI 生图，独立制作漫画形式的功能说明，通过视觉化表达降低用户理解门槛，并直观呈现功能效果。在账号粉丝约 500 的情况下，该内容获得约 6 万曝光。
             </p>
           </div>
