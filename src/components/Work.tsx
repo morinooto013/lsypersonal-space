@@ -42,13 +42,13 @@ export default function Work() {
           {/* 海报三图 */}
           <div className="card-glass rounded-2xl p-6">
             <div className="flex gap-3 overflow-x-auto pb-1 mb-5" style={{ scrollSnapType: 'x mandatory' }}>
-              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '360px', scrollSnapAlign: 'start' }}>
+              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '180px', scrollSnapAlign: 'start' }}>
                 <img src="/work/poster1.png" alt="VGS海报" className="w-full" />
               </div>
-              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '360px', scrollSnapAlign: 'start' }}>
+              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '180px', scrollSnapAlign: 'start' }}>
                 <img src="/work/poster2.png" alt="YokaiParade海报" className="w-full" />
               </div>
-              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '360px', scrollSnapAlign: 'start' }}>
+              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '180px', scrollSnapAlign: 'start' }}>
                 <img src="/work/poster3.png" alt="ポスター" className="w-full" />
               </div>
             </div>
@@ -86,18 +86,16 @@ export default function Work() {
             线上社媒活动 + 线下创作者交流活动
           </p>
 
-          {/* 三张活动现场图 */}
-          <div className="card-glass sm:card-glass rounded-2xl sm:p-6 sm:rounded-2xl">
-            <div className="flex gap-3 overflow-x-auto pb-1" style={{ scrollSnapType: 'x mandatory' }}>
-              <div className="rounded-xl overflow-hidden bg-white/5 flex-none w-[30%] min-w-[100px]" style={{ scrollSnapAlign: 'start' }}>
-                <img src="/work/event1.png" alt="活动现场1" className="w-full object-cover aspect-square" />
-              </div>
-              <div className="rounded-xl overflow-hidden bg-white/5 flex-none w-[30%] min-w-[100px]" style={{ scrollSnapAlign: 'start' }}>
-                <img src="/work/event2.png" alt="活动现场2" className="w-full object-cover aspect-square" />
-              </div>
-              <div className="rounded-xl overflow-hidden bg-white/5 flex-none w-[30%] min-w-[100px]" style={{ scrollSnapAlign: 'start' }}>
-                <img src="/work/event3.png" alt="活动现场3" className="w-full object-cover aspect-square" />
-              </div>
+          {/* 三张活动现场图 — 无框 */}
+          <div className="flex gap-3 overflow-x-auto pb-1" style={{ scrollSnapType: 'x mandatory' }}>
+            <div className="rounded-xl overflow-hidden flex-none w-[30%] min-w-[100px]" style={{ scrollSnapAlign: 'start' }}>
+              <img src="/work/event1.png" alt="活动现场1" className="w-full object-cover aspect-square" />
+            </div>
+            <div className="rounded-xl overflow-hidden flex-none w-[30%] min-w-[100px]" style={{ scrollSnapAlign: 'start' }}>
+              <img src="/work/event2.png" alt="活动现场2" className="w-full object-cover aspect-square" />
+            </div>
+            <div className="rounded-xl overflow-hidden flex-none w-[30%] min-w-[100px]" style={{ scrollSnapAlign: 'start' }}>
+              <img src="/work/event3.png" alt="活动现场3" className="w-full object-cover aspect-square" />
             </div>
           </div>
         </div>
