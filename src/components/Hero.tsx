@@ -9,7 +9,7 @@ export default function Hero() {
           className="text-3xl sm:text-4xl font-normal leading-tight"
           style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: '-0.5px' }}
         >
-          Hi, 我是<span style={{ color: 'rgba(255,255,255,1)' }}>林思懿</span>
+          <span style={{ color: 'rgba(255,255,255,0.55)' }}>Hi, 我是</span><span style={{ color: 'rgba(255,255,255,1)' }}>林思懿</span>
         </h1>
         <p className="text-xl sm:text-2xl text-muted-foreground mt-3" style={{ fontFamily: "'Instrument Serif', serif" }}>
           Hi, I'm Lin Siyi.
