@@ -37,7 +37,7 @@ export default function About() {
 
             {/* Education */}
             <div className="card-glass rounded-2xl p-6">
-              <h3 className="text-foreground/80 text-xs font-medium tracking-widest uppercase mb-4">教育背景</h3>
+              <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>教育背景</h3>
               <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <div>
@@ -54,16 +54,9 @@ export default function About() {
               </div>
             </div>
 
-            {/* Profile */}
-            <div className="card-glass rounded-2xl p-6 space-y-2.5 text-sm text-muted-foreground leading-relaxed">
-              <p>・具备AI产品理解与内容运营的复合背景，能够快速理解产品逻辑并转化为清晰易懂的内容表达。</p>
-              <p>・有创作者生态与内容增长经验，擅长基于用户行为与数据反馈优化内容策略。</p>
-              <p>・具备较强的结构化表达能力，能够输出兼顾专业性与可读性的内容（如案例解析、功能解读等）。</p>
-            </div>
-
             {/* Skills */}
             <div className="card-glass rounded-2xl p-6">
-              <h3 className="text-foreground/80 text-xs font-medium tracking-widest uppercase mb-4">个人技能</h3>
+              <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>个人技能</h3>
               <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-sm text-muted-foreground">
                 <div>
                   <p className="text-foreground/70 text-xs mb-1">AI 与技术理解</p>
@@ -82,6 +75,13 @@ export default function About() {
                   <p>日语 N1 / 英语六级</p>
                 </div>
               </div>
+            </div>
+
+            {/* Profile */}
+            <div className="card-glass rounded-2xl p-6 space-y-2.5 text-sm text-muted-foreground leading-relaxed">
+              <p>・具备AI产品理解与内容运营的复合背景，能够快速理解产品逻辑并转化为清晰易懂的内容表达。</p>
+              <p>・有创作者生态与内容增长经验，擅长基于用户行为与数据反馈优化内容策略。</p>
+              <p>・具备较强的结构化表达能力，能够输出兼顾专业性与可读性的内容（如案例解析、功能解读等）。</p>
             </div>
 
           </div>

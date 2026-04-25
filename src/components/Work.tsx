@@ -42,14 +42,14 @@ export default function Work() {
           {/* 海报三图 */}
           <div className="card-glass rounded-2xl p-6">
             <div className="grid grid-cols-3 gap-3 mb-5">
-              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
-                <img src="/work/poster1.png" alt="VGS海报" className="w-full object-contain" />
+              <div className="rounded-xl overflow-y-auto bg-white/5" style={{ maxHeight: '420px' }}>
+                <img src="/work/poster1.png" alt="VGS海报" className="w-full object-cover object-top" />
               </div>
-              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
-                <img src="/work/poster2.png" alt="YokaiParade海报" className="w-full object-contain" />
+              <div className="rounded-xl overflow-y-auto bg-white/5" style={{ maxHeight: '420px' }}>
+                <img src="/work/poster2.png" alt="YokaiParade海报" className="w-full object-cover object-top" />
               </div>
-              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
-                <img src="/work/poster3.png" alt="ポスター" className="w-full object-contain" />
+              <div className="rounded-xl overflow-y-auto bg-white/5" style={{ maxHeight: '420px' }}>
+                <img src="/work/poster3.png" alt="ポスター" className="w-full object-cover object-top" />
               </div>
             </div>
             <p className="text-muted-foreground text-xs leading-relaxed">
