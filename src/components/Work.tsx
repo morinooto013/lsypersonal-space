@@ -42,14 +42,14 @@ export default function Work() {
           {/* 海报三图 */}
           <div className="card-glass rounded-2xl p-6">
             <div className="flex gap-3 overflow-x-auto pb-1 mb-5" style={{ scrollSnapType: 'x mandatory' }}>
-              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ maxHeight: '420px', scrollSnapAlign: 'start' }}>
-                <img src="/work/poster1.png" alt="VGS海报" className="w-full object-cover object-top" />
+              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '360px', scrollSnapAlign: 'start' }}>
+                <img src="/work/poster1.png" alt="VGS海报" className="w-full" />
               </div>
-              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ maxHeight: '420px', scrollSnapAlign: 'start' }}>
-                <img src="/work/poster2.png" alt="YokaiParade海报" className="w-full object-cover object-top" />
+              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '360px', scrollSnapAlign: 'start' }}>
+                <img src="/work/poster2.png" alt="YokaiParade海报" className="w-full" />
               </div>
-              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ maxHeight: '420px', scrollSnapAlign: 'start' }}>
-                <img src="/work/poster3.png" alt="ポスター" className="w-full object-cover object-top" />
+              <div className="rounded-xl overflow-y-auto bg-white/5 flex-none w-[30%] min-w-[120px]" style={{ height: '360px', scrollSnapAlign: 'start' }}>
+                <img src="/work/poster3.png" alt="ポスター" className="w-full" />
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -87,7 +87,7 @@ export default function Work() {
           </p>
 
           {/* 三张活动现场图 */}
-          <div className="card-glass rounded-2xl p-6">
+          <div className="card-glass sm:card-glass rounded-2xl sm:p-6 sm:rounded-2xl">
             <div className="flex gap-3 overflow-x-auto pb-1" style={{ scrollSnapType: 'x mandatory' }}>
               <div className="rounded-xl overflow-hidden bg-white/5 flex-none w-[30%] min-w-[100px]" style={{ scrollSnapAlign: 'start' }}>
                 <img src="/work/event1.png" alt="活动现场1" className="w-full object-cover aspect-square" />
