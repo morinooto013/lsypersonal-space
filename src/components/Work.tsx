@@ -12,18 +12,27 @@ export default function Work() {
 
         {/* ── 内容制作 ── */}
         <div className="mb-20">
-          <h3
-            className="text-foreground/80 text-xs font-medium tracking-widest uppercase mb-8"
+          <h3 className="text-foreground text-xl sm:text-2xl font-normal mb-3"
+            style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             内容制作
           </h3>
+          <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-2xl">
+            具备一定的设计审美与内容制作能力，能够将产品功能转化为通俗易懂的表达形式，同时支持活动海报等视觉内容的产出。
+          </p>
 
           {/* 漫画三图 */}
           <div className="card-glass rounded-2xl p-6 mb-5">
             <div className="grid grid-cols-3 gap-3 mb-5">
-              <img src="/work/manga1.png" alt="参考生图漫画1" className="w-full rounded-xl object-cover aspect-[3/4]" />
-              <img src="/work/manga2.png" alt="参考生图漫画2" className="w-full rounded-xl object-cover aspect-[3/4]" />
-              <img src="/work/manga3.png" alt="参考生图漫画3" className="w-full rounded-xl object-cover aspect-[3/4]" />
+              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
+                <img src="/work/manga1.png" alt="参考生图漫画1" className="w-full h-full object-contain" />
+              </div>
+              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
+                <img src="/work/manga2.png" alt="参考生图漫画2" className="w-full h-full object-contain" />
+              </div>
+              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
+                <img src="/work/manga3.png" alt="参考生图漫画3" className="w-full h-full object-contain" />
+              </div>
             </div>
             <p className="text-muted-foreground text-xs leading-relaxed">
               在宣推产品「参考生图」功能时，运用 AI 生图，独立制作漫画形式的功能说明，通过视觉化表达降低用户理解门槛，并直观呈现功能效果。在账号粉丝约 500 的情况下，该内容获得约 6 万曝光。
@@ -33,9 +42,15 @@ export default function Work() {
           {/* 海报三图 */}
           <div className="card-glass rounded-2xl p-6">
             <div className="grid grid-cols-3 gap-3 mb-5">
-              <img src="/work/poster1.png" alt="VGS海报" className="w-full rounded-xl object-cover aspect-[3/4]" />
-              <img src="/work/poster2.png" alt="YokaiParade海报" className="w-full rounded-xl object-cover aspect-[3/4]" />
-              <img src="/work/poster3.png" alt="ポスター" className="w-full rounded-xl object-cover aspect-[3/4]" />
+              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
+                <img src="/work/poster1.png" alt="VGS海报" className="w-full object-contain" />
+              </div>
+              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
+                <img src="/work/poster2.png" alt="YokaiParade海报" className="w-full object-contain" />
+              </div>
+              <div className="rounded-xl overflow-hidden bg-white/5 flex items-center justify-center">
+                <img src="/work/poster3.png" alt="ポスター" className="w-full object-contain" />
+              </div>
             </div>
             <p className="text-muted-foreground text-xs leading-relaxed">
               同步承担活动海报制作
@@ -45,8 +60,8 @@ export default function Work() {
 
         {/* ── 活动运营 ── */}
         <div>
-          <h3
-            className="text-foreground/80 text-xs font-medium tracking-widest uppercase mb-4"
+          <h3 className="text-foreground text-xl sm:text-2xl font-normal mb-3"
+            style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             活动运营
           </h3>
