@@ -56,7 +56,7 @@ export default function About() {
             {/* Skills */}
             <div className="card-glass rounded-2xl p-6">
               <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>个人技能</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 text-sm text-muted-foreground">
+              <div className="flex flex-col gap-5 text-sm text-muted-foreground">
                 <div>
                   <p className="text-foreground/70 text-xs mb-1.5">AI 与技术理解</p>
                   <p className="leading-relaxed">熟悉 AI 工具在实际工作中的应用，能够使用 Claude Code、OpenClaw 等 Agent 提升内容生产与流程效率，并基于实际需求搭建基础工作流；可结合 VS Code 进行 VibeCoding</p>
