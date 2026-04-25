@@ -58,19 +58,19 @@ export default function About() {
               <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>个人技能</h3>
               <div className="flex flex-col gap-5 text-sm text-muted-foreground">
                 <div>
-                  <p className="text-foreground/70 text-xs mb-1.5">AI 与技术理解</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">AI 与技术理解</p>
                   <p className="leading-relaxed">熟悉 AI 工具在实际工作中的应用，能够使用 Claude Code、OpenClaw 等 Agent 提升内容生产与流程效率，<br />并基于实际需求搭建基础工作流；可结合 VS Code 进行 VibeCoding</p>
                 </div>
                 <div>
-                  <p className="text-foreground/70 text-xs mb-1.5">内容创作</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">内容创作</p>
                   <p className="leading-relaxed">擅长将产品功能与技术信息转化为清晰易懂的内容表达（如案例解析、功能解读、使用说明与效果展示等）。</p>
                 </div>
                 <div>
-                  <p className="text-foreground/70 text-xs mb-1.5">工具能力</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">工具能力</p>
                   <p className="leading-relaxed">熟练使用 AI 图片视频生成工具，以及 Canva、Photoshop、剪映 等进行视觉与视频内容制作；<br />具备基础数据分析能力，通过全国计算机二级考试。</p>
                 </div>
                 <div>
-                  <p className="text-foreground/70 text-xs mb-1.5">语言</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">语言</p>
                   <p className="leading-relaxed">日语 N1 / 英语六级</p>
                 </div>
               </div>
