@@ -59,7 +59,7 @@ export default function About() {
               <div className="flex flex-col gap-5 text-sm text-muted-foreground">
                 <div>
                   <p className="text-foreground/70 text-xs mb-1.5">AI 与技术理解</p>
-                  <p className="leading-relaxed">熟悉 AI 工具在实际工作中的应用，能够使用 Claude Code、OpenClaw 等 Agent 提升内容生产与流程效率，并基于实际需求搭建基础工作流；可结合 VS Code 进行 VibeCoding</p>
+                  <p className="leading-relaxed">熟悉 AI 工具在实际工作中的应用，能够使用 Claude Code、OpenClaw 等 Agent 提升内容生产与流程效率，<br />并基于实际需求搭建基础工作流；可结合 VS Code 进行 VibeCoding</p>
                 </div>
                 <div>
                   <p className="text-foreground/70 text-xs mb-1.5">内容创作</p>
@@ -67,7 +67,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-foreground/70 text-xs mb-1.5">工具能力</p>
-                  <p className="leading-relaxed">熟练使用 AI 图片视频生成工具，以及 Canva、Photoshop、剪映 等进行视觉与视频内容制作；具备基础数据分析能力，通过全国计算机二级考试。</p>
+                  <p className="leading-relaxed">熟练使用 AI 图片视频生成工具，以及 Canva、Photoshop、剪映 等进行视觉与视频内容制作；<br />具备基础数据分析能力，通过全国计算机二级考试。</p>
                 </div>
                 <div>
                   <p className="text-foreground/70 text-xs mb-1.5">语言</p>
