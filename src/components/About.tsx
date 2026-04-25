@@ -30,12 +30,6 @@ export default function About() {
                 style={{ aspectRatio: '3/4' }}
               />
             </div>
-            <p
-              className="text-sm text-foreground/60 tracking-[0.2em]"
-              style={{ fontFamily: "'Instrument Serif', serif" }}
-            >
-              林思懿
-            </p>
           </div>
 
           {/* Cards column */}
