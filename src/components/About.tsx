@@ -41,7 +41,7 @@ export default function About() {
                 <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <div>
                     <p className="text-foreground text-sm">北京大学 · 日语笔译 · 全日制硕士</p>
-                    <p className="text-muted-foreground text-xs mt-1">GPA：3.83/4.0 · 获2024-2025学年度研究生"科学实践创新"奖学金</p>
+                    <p className="text-muted-foreground text-xs mt-1">GPA：3.83/4.0 · 已出版译著 2 部 · 获 2024-2025 学年度研究生"科学实践创新"奖及奖学金</p>
                   </div>
                   <span className="text-muted-foreground text-xs whitespace-nowrap">2023.09 – 2025.06</span>
                 </div>
@@ -58,20 +58,20 @@ export default function About() {
               <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>个人技能</h3>
               <div className="flex flex-col gap-5 text-sm text-muted-foreground">
                 <div>
-                  <p className="text-foreground/90 text-xs mb-1.5">AI 与技术理解</p>
-                  <p className="leading-relaxed">熟悉 AI 工具在实际工作中的应用，能够使用 Claude Code、OpenClaw 等 Agent 提升内容生产与流程效率，<br />并基于实际需求搭建基础工作流；可结合 VS Code 进行 VibeCoding</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">AI 与技术工具</p>
+                  <p className="leading-relaxed">熟练使用 Claude Code、OpenClaw 等 AI Agent，具备基础 Vibe Coding 能力。</p>
                 </div>
                 <div>
-                  <p className="text-foreground/90 text-xs mb-1.5">内容创作</p>
-                  <p className="leading-relaxed">擅长将产品功能与技术信息转化为清晰易懂的内容表达（如案例解析、功能解读、使用说明与效果展示等）。</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">内容与创作</p>
+                  <p className="leading-relaxed">擅长文案策划与视频制作（AI 生图生视频、剪映、PS、Canva）；<br />熟悉二次元、短剧与 AI 内容生态。</p>
                 </div>
                 <div>
-                  <p className="text-foreground/90 text-xs mb-1.5">工具能力</p>
-                  <p className="leading-relaxed">熟练使用 AI 图片视频生成工具，以及 Canva、Photoshop、剪映 等进行视觉与视频内容制作；<br />具备基础数据分析能力，通过全国计算机二级考试。</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">数据分析能力</p>
+                  <p className="leading-relaxed">全国计算机二级，具备良好的数据敏感度，能基于内容数据与用户行为进行分析与策略优化。</p>
                 </div>
                 <div>
-                  <p className="text-foreground/90 text-xs mb-1.5">语言</p>
-                  <p className="leading-relaxed">日语 N1 / 英语六级</p>
+                  <p className="text-foreground/90 text-xs mb-1.5">语言能力</p>
+                  <p className="leading-relaxed">英语 CET-6 / 日语 N1（可作为工作语言）</p>
                 </div>
               </div>
             </div>
