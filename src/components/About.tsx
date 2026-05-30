@@ -39,7 +39,7 @@ const detailGroups: Record<string, SkillDetail> = {
   },
 }
 
-const linkToWork = ['内容质量判断与创作', '社媒运营', '活动策划执行', '英语/日语']
+const linkToWork = ['内容质量判断与创作', '社媒运营', '英语/日语']
 
 export default function About() {
   const [activeDetail, setActiveDetail] = useState<SkillDetail | null>(null)
@@ -58,7 +58,10 @@ export default function About() {
   ]
 
   const handleClick = (name: string) => {
-    if (linkToWork.includes(name)) {
+    if (name === '活动策划执行') {
+      document.querySelector('#work-events')?.scrollIntoView({ behavior: 'smooth' })
+      setActiveDetail(null)
+    } else if (linkToWork.includes(name)) {
       document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })
       setActiveDetail(null)
     } else if (detailGroups[name]) {
@@ -80,7 +83,7 @@ export default function About() {
         {/* Top row: Avatar + Education card, same height */}
         <div className="flex flex-col sm:flex-row gap-6 items-stretch mb-6">
 
-          {/* Avatar - smaller, matches right card height */}
+          {/* Avatar */}
           <div className="shrink-0 sm:w-36">
             <div
               className="relative rounded-2xl overflow-hidden w-full h-full"
@@ -120,10 +123,8 @@ export default function About() {
 
         {/* Skill Tree section */}
         <div className="card-glass rounded-2xl p-6">
-          <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>个人技能</h3>
-
           <div className="flex flex-col lg:flex-row gap-5 items-start">
-            {/* Tree image with nodes - left */}
+            {/* Tree image with nodes - following reference image layout */}
             <div className="relative w-full lg:w-[52%] shrink-0">
               <img
                 src="/skill-tree-bg.png"
@@ -132,30 +133,37 @@ export default function About() {
                 draggable={false}
               />
 
-              {/* Skill nodes - evenly distributed on leaves, not on trunk */}
+              {/* Skill nodes - layout matching reference:
+                  Row 1: center-right (创作者运营)
+                  Row 2: left (用户需求洞察) + right (社媒运营)
+                  Row 3: left (产品功能落地) + center-right (活动策划执行)
+                  Row 4: left (AI工具提效) + center-right (数据驱动)
+                  Row 5: left (跨团队协作) + center-right (内容质量判断与创作)
+                  英语/日语 tucked in
+              */}
               <div className="absolute inset-0">
                 <div className="relative w-full h-full">
-                  {/* Top canopy */}
-                  <SkillNode name={skills[0].name} highlight={skills[0].highlight} active={activeDetail?.title === detailGroups[skills[0].name]?.title} onClick={() => handleClick(skills[0].name)} className="absolute top-[8%] left-[40%]" />
+                  {/* Row 1 - top center-right */}
+                  <SkillNode name={skills[0].name} highlight={skills[0].highlight} active={activeDetail?.title === detailGroups[skills[0].name]?.title} onClick={() => handleClick(skills[0].name)} className="absolute top-[8%] left-[38%]" />
 
-                  {/* Upper left & right branches */}
-                  <SkillNode name={skills[1].name} highlight={skills[1].highlight} active={activeDetail?.title === detailGroups[skills[1].name]?.title} onClick={() => handleClick(skills[1].name)} className="absolute top-[20%] left-[8%]" />
-                  <SkillNode name={skills[2].name} highlight={skills[2].highlight} active={false} onClick={() => handleClick(skills[2].name)} className="absolute top-[18%] right-[6%]" />
+                  {/* Row 2 - left & right */}
+                  <SkillNode name={skills[1].name} highlight={skills[1].highlight} active={activeDetail?.title === detailGroups[skills[1].name]?.title} onClick={() => handleClick(skills[1].name)} className="absolute top-[20%] left-[4%]" />
+                  <SkillNode name={skills[2].name} highlight={skills[2].highlight} active={false} onClick={() => handleClick(skills[2].name)} className="absolute top-[20%] right-[4%]" />
 
-                  {/* Mid section */}
-                  <SkillNode name={skills[3].name} highlight={skills[3].highlight} active={activeDetail?.title === detailGroups[skills[3].name]?.title} onClick={() => handleClick(skills[3].name)} className="absolute top-[32%] left-[22%]" />
-                  <SkillNode name={skills[4].name} highlight={skills[4].highlight} active={false} onClick={() => handleClick(skills[4].name)} className="absolute top-[30%] right-[8%]" />
+                  {/* Row 3 - left & center-right */}
+                  <SkillNode name={skills[3].name} highlight={skills[3].highlight} active={activeDetail?.title === detailGroups[skills[3].name]?.title} onClick={() => handleClick(skills[3].name)} className="absolute top-[34%] left-[20%]" />
+                  <SkillNode name={skills[4].name} highlight={skills[4].highlight} active={false} onClick={() => handleClick(skills[4].name)} className="absolute top-[34%] right-[4%]" />
 
-                  {/* Mid-lower */}
-                  <SkillNode name={skills[5].name} highlight={skills[5].highlight} active={activeDetail?.title === detailGroups[skills[5].name]?.title} onClick={() => handleClick(skills[5].name)} className="absolute top-[43%] left-[4%]" />
-                  <SkillNode name={skills[6].name} highlight={skills[6].highlight} active={activeDetail?.title === detailGroups[skills[6].name]?.title} onClick={() => handleClick(skills[6].name)} className="absolute top-[44%] right-[12%]" />
+                  {/* Row 4 - left & center-right */}
+                  <SkillNode name={skills[5].name} highlight={skills[5].highlight} active={activeDetail?.title === detailGroups[skills[5].name]?.title} onClick={() => handleClick(skills[5].name)} className="absolute top-[48%] left-[4%]" />
+                  <SkillNode name={skills[6].name} highlight={skills[6].highlight} active={activeDetail?.title === detailGroups[skills[6].name]?.title} onClick={() => handleClick(skills[6].name)} className="absolute top-[48%] right-[8%]" />
 
-                  {/* Lower branches */}
-                  <SkillNode name={skills[7].name} highlight={skills[7].highlight} active={activeDetail?.title === detailGroups[skills[7].name]?.title} onClick={() => handleClick(skills[7].name)} className="absolute top-[55%] left-[14%]" />
-                  <SkillNode name={skills[8].name} highlight={skills[8].highlight} active={false} onClick={() => handleClick(skills[8].name)} className="absolute top-[56%] right-[4%]" />
+                  {/* Row 5 - left & center-right */}
+                  <SkillNode name={skills[7].name} highlight={skills[7].highlight} active={activeDetail?.title === detailGroups[skills[7].name]?.title} onClick={() => handleClick(skills[7].name)} className="absolute top-[61%] left-[8%]" />
+                  <SkillNode name={skills[8].name} highlight={skills[8].highlight} active={false} onClick={() => handleClick(skills[8].name)} className="absolute top-[61%] right-[4%]" />
 
-                  {/* Bottom leaves - above trunk */}
-                  <SkillNode name={skills[9].name} highlight={skills[9].highlight} active={false} onClick={() => handleClick(skills[9].name)} className="absolute top-[66%] left-[6%]" />
+                  {/* 英语/日语 - bottom left area */}
+                  <SkillNode name={skills[9].name} highlight={skills[9].highlight} active={false} onClick={() => handleClick(skills[9].name)} className="absolute top-[73%] left-[4%]" />
                 </div>
               </div>
             </div>
@@ -178,8 +186,13 @@ export default function About() {
                   </div>
                 </div>
               ) : (
-                <div className="rounded-xl p-4 opacity-50" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                  <p className="text-muted-foreground text-xs">点击能力标签查看项目详情</p>
+                <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    具备 AI 产品理解与内容运营的复合背景，能够快速拆解产品逻辑，并转化为清晰易懂的内容表达。
+                  </p>
+                  <p className="text-muted-foreground text-xs leading-relaxed mt-3">
+                    ・具备创作者生态与内容增长经验，擅长基于用户行为与数据反馈迭代内容策略，并实现站外曝光向业务转化的有效承接。
+                  </p>
                 </div>
               )}
             </div>

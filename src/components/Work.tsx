@@ -59,7 +59,7 @@ export default function Work() {
         </div>
 
         {/* ── 活动运营 ── */}
-        <div>
+        <div id="work-events">
           <h3 className="text-foreground text-xl sm:text-2xl font-normal mb-3"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
