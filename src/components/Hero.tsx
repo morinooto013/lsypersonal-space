@@ -18,10 +18,10 @@ export default function Hero() {
 
       <div className="animate-fade-rise-delay mt-8 max-w-3xl w-full space-y-2">
         <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
-          有 AI 产品内容和运营背景。关注新技术的发展，持续尝试并探索其在实际工作中的应用
+          AI产品的海外运营。积极拥抱新技术，持续尝试并探索其在实际工作中的应用
         </p>
         <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          I work in AI product content and operations,<br />
+          Overseas Operations for AI Products,<br />
           focusing on exploring how AI can be applied to content creation and workflows.
         </p>
       </div>

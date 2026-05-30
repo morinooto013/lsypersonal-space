@@ -8,34 +8,34 @@ type SkillDetail = {
 
 const detailGroups: Record<string, SkillDetail> = {
   '创作者运营': {
-    title: '小预算撬动内容爆发与收入跃升，单日收入超过 $10k',
-    desc: '基于半年运营铺垫，筛选 7 位核心创作者 1 对 1 指导，产出约 20 条覆盖产品多维优势的视频内容；宣发日集中发布，示范内容触发平台自然流量推荐；同步策划投稿激励活动，并与商业化联动提供年包折扣。',
-    result: '站外曝光 +300%、收入 +200%，日本地区单日收入超过 $10k，超越多个主要市场（全自然流量）。',
+    title: '创作者分层运营与爆款内容增长策略设计',
+    desc: '基于不同阶段创作者的诉求和对平台的价值分层运营，在新模型宣发期间筛选7位核心创作者进行1对1内容制作指导，围绕产品能力设计差异化内容表达（效果展示、对比测评等），提升内容传播潜力。\n通过集中发布策略放大示范内容效应，触发平台自然流量推荐；同步设计投稿激励机制，并联动商业化策略提供年包折扣，提升转化效率。',
+    result: '站外曝光提升300%，收入提升200%，日本市场单日收入突破$10k，超过多个主要市场，实现全自然流量驱动的内容增长与商业转化放大。',
   },
   '数据驱动': {
-    title: '小预算撬动内容爆发与收入跃升，单日收入超过 $10k',
-    desc: '基于半年运营铺垫，筛选 7 位核心创作者 1 对 1 指导，产出约 20 条覆盖产品多维优势的视频内容；宣发日集中发布，示范内容触发平台自然流量推荐；同步策划投稿激励活动，并与商业化联动提供年包折扣。',
-    result: '站外曝光 +300%、收入 +200%，日本地区单日收入超过 $10k，超越多个主要市场（全自然流量）。',
+    title: '创作者分层运营与爆款内容增长策略设计',
+    desc: '基于不同阶段创作者的诉求和对平台的价值分层运营，在新模型宣发期间筛选7位核心创作者进行1对1内容制作指导，围绕产品能力设计差异化内容表达（效果展示、对比测评等），提升内容传播潜力。\n通过集中发布策略放大示范内容效应，触发平台自然流量推荐；同步设计投稿激励机制，并联动商业化策略提供年包折扣，提升转化效率。',
+    result: '站外曝光提升300%，收入提升200%，日本市场单日收入突破$10k，超过多个主要市场，实现全自然流量驱动的内容增长与商业转化放大。',
   },
   '用户需求洞察': {
-    title: 'AIMV 活动：推动产品功能上线 + 内容营销，海外使用量达国内 6 倍',
-    desc: '挑战：主题小众、制作门槛高，前期投稿极少，无有效投流流量。行动：根据用户反馈推动产品上线「一键 MV」功能；自制示范 MV 发帖展示步骤；激励核心创作者增加投稿。',
-    result: '投稿量爆发式增长至远超预期；「一键 MV」海外使用量达国内 6 倍，由个人运营独立驱动。',
+    title: '基于用户反馈推动AI创作功能上线',
+    desc: '在MV创作活动期间，针对主题小众、制作门槛高、创作链路复杂导致早期内容供给不足及自然流量缺失的问题，基于用户反馈推动产品侧上线「一键 MV」能力，降低创作门槛并提升内容可完成性。\n同时通过自制示范MV拆解完整创作步骤，降低创作者理解成本，并定向激励核心创作者参与内容生产，补充早期种子内容供给，形成可复制的创作范式。',
+    result: '投稿量快速增长并显著超出预期；「一键 MV」功能海外使用量达到国内的6倍，实现由内容运营驱动的AI功能冷启动与规模化增长。',
   },
   '产品功能落地': {
-    title: 'AIMV 活动：推动产品功能上线 + 内容营销，海外使用量达国内 6 倍',
-    desc: '挑战：主题小众、制作门槛高，前期投稿极少，无有效投流流量。行动：根据用户反馈推动产品上线「一键 MV」功能；自制示范 MV 发帖展示步骤；激励核心创作者增加投稿。',
-    result: '投稿量爆发式增长至远超预期；「一键 MV」海外使用量达国内 6 倍，由个人运营独立驱动。',
+    title: '基于用户反馈推动AI创作功能上线',
+    desc: '在MV创作活动期间，针对主题小众、制作门槛高、创作链路复杂导致早期内容供给不足及自然流量缺失的问题，基于用户反馈推动产品侧上线「一键 MV」能力，降低创作门槛并提升内容可完成性。\n同时通过自制示范MV拆解完整创作步骤，降低创作者理解成本，并定向激励核心创作者参与内容生产，补充早期种子内容供给，形成可复制的创作范式。',
+    result: '投稿量快速增长并显著超出预期；「一键 MV」功能海外使用量达到国内的6倍，实现由内容运营驱动的AI功能冷启动与规模化增长。',
   },
   '跨团队协作': {
-    title: 'AIMV 活动：推动产品功能上线 + 内容营销，海外使用量达国内 6 倍',
-    desc: '挑战：主题小众、制作门槛高，前期投稿极少，无有效投流流量。行动：根据用户反馈推动产品上线「一键 MV」功能；自制示范 MV 发帖展示步骤；激励核心创作者增加投稿。',
-    result: '投稿量爆发式增长至远超预期；「一键 MV」海外使用量达国内 6 倍，由个人运营独立驱动。',
+    title: '基于用户反馈推动AI创作功能上线',
+    desc: '在MV创作活动期间，针对主题小众、制作门槛高、创作链路复杂导致早期内容供给不足及自然流量缺失的问题，基于用户反馈推动产品侧上线「一键 MV」能力，降低创作门槛并提升内容可完成性。\n同时通过自制示范MV拆解完整创作步骤，降低创作者理解成本，并定向激励核心创作者参与内容生产，补充早期种子内容供给，形成可复制的创作范式。',
+    result: '投稿量快速增长并显著超出预期；「一键 MV」功能海外使用量达到国内的6倍，实现由内容运营驱动的AI功能冷启动与规模化增长。',
   },
   'AI工具提效': {
-    title: '创建矩阵号，批量内容自动化生产，日均产出视频 100+ 条',
-    desc: '搭建海外社媒矩阵号体系，利用 Claude Code 自动化生成展现产品性能的视频内容，多账号持续分发；调试 Skill 以满足不同社媒平台的视频格式与亮点展示要求，优化提示词，显著提升可采用视频率。',
-    result: '日均产出视频内容 100 条以上，带动产品功能自然搜索量提升 30%。',
+    title: '海外社媒矩阵与AI驱动内容放大体系设计',
+    desc: '围绕提升海外官号内容曝光效率与自然流量转化，搭建社媒矩阵号体系，构建"官号内容放大 + 矩阵号趋势响应 + AI内容生产"的协同机制：官号内容由矩阵号同步扩散放大，同时矩阵号基于账号定位进行热点追踪与爆款视频复刻，提升整体传播覆盖。\n在内容生产侧，结合Claude Code进行视频内容批量生成，并通过优化提示词与Skill结构，提升视频与不同账号的适配度与采纳率，实现规模化内容生产下的质量稳定性提升。',
+    result: '实现日均100+条视频内容规模化生产，显著提升内容采纳率与分发效率，提升海外官号内容曝光与传播效果。',
   },
 }
 
@@ -126,6 +126,14 @@ export default function About() {
           <div className="flex flex-col lg:flex-row gap-5 items-start">
             {/* Tree image with nodes */}
             <div className="relative w-full lg:w-[52%] shrink-0">
+              {/* Skill Tree title */}
+              <h3
+                className="absolute top-3 left-4 z-10 text-foreground/70 text-sm font-normal"
+                style={{ fontFamily: "'Instrument Serif', serif" }}
+              >
+                Skill Tree
+              </h3>
+
               <img
                 src="/skill-tree-bg.png"
                 alt=""
@@ -162,7 +170,7 @@ export default function About() {
                   <h4 className="text-foreground text-sm font-medium mb-3 leading-snug">
                     {activeDetail.title}
                   </h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed mb-3">
+                  <p className="text-muted-foreground text-xs leading-relaxed mb-3 whitespace-pre-line">
                     {activeDetail.desc}
                   </p>
                   <div className="border-t border-white/10 pt-2.5">
@@ -182,6 +190,26 @@ export default function About() {
                   </p>
                 </div>
               )}
+
+              {/* AI Creator Agent card */}
+              <div className="rounded-xl p-4 mt-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                <h4 className="text-foreground text-sm font-medium mb-2 leading-snug">
+                  创作者经验产品化实践：AI Creator Agent
+                </h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  将优秀创作者的选题经验与热点判断逻辑沉淀为 AI Agent，帮助不同类型账号评估热点适配度并生成内容策略。
+                </p>
+                <div className="flex justify-end mt-3">
+                  <a
+                    href="https://claude.ai/share/ea946a5f-c84a-4813-bbb1-14c34b05c898"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-300/80 text-xs hover:text-blue-200 transition-colors"
+                  >
+                    case展示 →
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -206,24 +234,30 @@ function SkillNode({ name, highlight, active, onClick, x, y }: {
     >
       <button
         onClick={onClick}
-        className={`rounded-full px-3 py-1 sm:px-4 sm:py-1.5 transition-all duration-300 hover:scale-110 cursor-pointer ${active ? 'scale-105' : ''}`}
+        className={`rounded-full px-3 py-1 sm:px-4 sm:py-1.5 transition-all duration-300 hover:scale-110 cursor-pointer ${active ? 'scale-110' : ''}`}
         style={highlight ? {
-          background: active ? 'rgba(99, 140, 255, 0.3)' : 'rgba(99, 140, 255, 0.15)',
+          background: active ? 'rgba(80, 130, 255, 0.45)' : 'rgba(99, 140, 255, 0.15)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          border: active ? '1.5px solid rgba(140, 180, 255, 0.7)' : '1px solid rgba(120, 160, 255, 0.45)',
+          border: active ? '2px solid rgba(160, 200, 255, 0.9)' : '1px solid rgba(120, 160, 255, 0.45)',
           boxShadow: active
-            ? 'inset 0 1px 0 rgba(180, 210, 255, 0.3), 0 0 24px rgba(99, 140, 255, 0.4), 0 2px 12px rgba(0, 0, 0, 0.2)'
+            ? 'inset 0 1px 0 rgba(200, 220, 255, 0.4), 0 0 32px rgba(80, 130, 255, 0.6), 0 0 12px rgba(80, 130, 255, 0.3), 0 2px 12px rgba(0, 0, 0, 0.2)'
             : 'inset 0 1px 0 rgba(150, 190, 255, 0.15), 0 0 14px rgba(99, 140, 255, 0.2), 0 2px 8px rgba(0, 0, 0, 0.2)',
         } : {
-          background: 'rgba(255, 255, 255, 0.06)',
+          background: active ? 'rgba(255, 255, 255, 0.18)' : 'rgba(255, 255, 255, 0.06)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.18)',
-          boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.2)',
+          border: active ? '2px solid rgba(255, 255, 255, 0.5)' : '1px solid rgba(255, 255, 255, 0.18)',
+          boxShadow: active
+            ? 'inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 20px rgba(255, 255, 255, 0.15), 0 2px 12px rgba(0, 0, 0, 0.2)'
+            : 'inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.2)',
         }}
       >
-        <span className={`text-[10px] sm:text-xs font-medium whitespace-nowrap ${highlight ? 'text-blue-200' : 'text-white/80'}`}>
+        <span className={`text-[10px] sm:text-xs font-medium whitespace-nowrap ${
+          active
+            ? (highlight ? 'text-white' : 'text-white')
+            : (highlight ? 'text-blue-200' : 'text-white/80')
+        }`}>
           {name}
         </span>
       </button>
