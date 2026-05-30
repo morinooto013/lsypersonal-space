@@ -54,12 +54,12 @@ export default function About() {
     { name: '用户需求洞察', highlight: true, x: 60.65, y: 35.56 },
     { name: '数据驱动', highlight: true, x: 22.61, y: 39.42 },
     { name: '产品功能落地', highlight: true, x: 38.59, y: 46.13 },
-    { name: '活动策划执行', x: 75.86, y: 47.64 },
+    { name: '活动策划执行', highlight: true, x: 75.86, y: 47.64 },
     { name: '创作者运营', highlight: true, x: 57.75, y: 53.35 },
     { name: 'AI工具提效', highlight: true, x: 20.53, y: 54.40 },
-    { name: '英语/日语', x: 41.25, y: 61.39 },
-    { name: '内容把控与创作', x: 68.35, y: 67.94 },
-    { name: '社媒运营', x: 27.38, y: 70.28 },
+    { name: '英语/日语', highlight: true, x: 41.25, y: 61.39 },
+    { name: '内容把控与创作', highlight: true, x: 68.35, y: 67.94 },
+    { name: '社媒运营', highlight: true, x: 27.38, y: 70.28 },
   ]
 
   const handleClick = (name: string) => {
@@ -196,8 +196,8 @@ export default function About() {
                 </div>
               )}
 
-              {/* AI Creator Agent card - shows with 用户需求洞察 group */}
-              {activeDetail?.title === '基于用户反馈推动AI创作功能上线' && (
+              {/* AI Creator Agent card - shows with AI工具提效 group */}
+              {activeDetail?.title === '海外社媒矩阵与AI驱动内容放大体系设计' && (
                 <div className="rounded-xl p-4 mt-4 animate-fade-rise" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <h4 className="text-foreground text-sm font-medium mb-2 leading-snug">
                     创作者经验产品化实践：AI Creator Agent
