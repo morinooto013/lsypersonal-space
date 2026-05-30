@@ -6,7 +6,8 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git push *)",
-      "Bash(cp \"/c/Users/linsi/Downloads/vidu-image-3314508155451694.png\" \"/c/Users/linsi/lsyspace/velorah/public/skill-tree-bg.png\")"
+      "Bash(cp \"/c/Users/linsi/Downloads/vidu-image-3314508155451694.png\" \"/c/Users/linsi/lsyspace/velorah/public/skill-tree-bg.png\")",
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('/c/Users/linsi/Downloads/vidu-image-3314520797117965.png'\\); print\\(img.mode, img.size\\)\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\linsi\\Downloads"
