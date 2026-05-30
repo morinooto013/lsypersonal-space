@@ -1,7 +1,6 @@
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import About from './components/About'
-import SkillTree from './components/SkillTree'
 import Experience from './components/Experience'
 import Work from './components/Work'
 
@@ -27,7 +26,6 @@ export default function App() {
         <Navigation />
         <Hero />
         <About />
-        <SkillTree />
         <Experience />
         <Work />
       </div>
