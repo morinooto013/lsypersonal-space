@@ -39,7 +39,7 @@ const detailGroups: Record<string, SkillDetail> = {
   },
 }
 
-const linkToWork = ['内容质量判断与创作', '英语/日语']
+const linkToWork = ['内容把控与创作', '英语/日语']
 
 // Default positions (percentage based)
 const defaultPositions: Record<string, { x: number; y: number }> = {
@@ -52,7 +52,7 @@ const defaultPositions: Record<string, { x: number; y: number }> = {
   'AI工具提效': { x: 6, y: 50 },
   '数据驱动': { x: 65, y: 50 },
   '跨团队协作': { x: 2, y: 64 },
-  '内容质量判断与创作': { x: 58, y: 64 },
+  '内容把控与创作': { x: 58, y: 64 },
 }
 
 export default function About() {
@@ -73,7 +73,7 @@ export default function About() {
     { name: 'AI工具提效', highlight: true },
     { name: '数据驱动', highlight: true },
     { name: '跨团队协作', highlight: true },
-    { name: '内容质量判断与创作' },
+    { name: '内容把控与创作' },
   ]
 
   const handleClick = (name: string) => {
