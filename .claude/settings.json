@@ -3,7 +3,13 @@
     "allow": [
       "Bash(npx tsc *)",
       "Bash(npm run *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(cp \"/c/Users/linsi/Downloads/vidu-image-3314508155451694.png\" \"/c/Users/linsi/lsyspace/velorah/public/skill-tree-bg.png\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\linsi\\Downloads"
     ]
   }
 }
