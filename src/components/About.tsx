@@ -37,9 +37,14 @@ const detailGroups: Record<string, SkillDetail> = {
     desc: '围绕提升海外官号内容曝光效率与自然流量转化，搭建社媒矩阵号体系，构建"官号内容放大 + 矩阵号趋势响应 + AI内容生产"的协同机制：官号内容由矩阵号同步扩散放大，同时矩阵号基于账号定位进行热点追踪与爆款视频复刻，提升整体传播覆盖。\n在内容生产侧，结合Claude Code进行视频内容批量生成，并通过优化提示词与Skill结构，提升视频与不同账号的适配度与采纳率，实现规模化内容生产下的质量稳定性提升。',
     result: '实现日均100+条视频内容规模化生产，显著提升内容采纳率与分发效率，提升海外官号内容曝光与传播效果。',
   },
+  '内容把控与创作': {
+    title: '创作者分层运营与爆款内容增长策略设计',
+    desc: '基于不同阶段创作者的诉求和对平台的价值分层运营，在新模型宣发期间筛选7位核心创作者进行1对1内容制作指导，围绕产品能力设计差异化内容表达（效果展示、对比测评等），提升内容传播潜力。\n通过集中发布策略放大示范内容效应，触发平台自然流量推荐；同步设计投稿激励机制，并联动商业化策略提供年包折扣，提升转化效率。',
+    result: '站外曝光提升300%，收入提升200%，日本市场单日收入突破$10k，超过多个主要市场，实现全自然流量驱动的内容增长与商业转化放大。',
+  },
 }
 
-const linkToWork = ['内容把控与创作', '英语/日语']
+const linkToWork = ['英语/日语']
 
 export default function About() {
   const [activeDetail, setActiveDetail] = useState<SkillDetail | null>(null)
@@ -128,7 +133,7 @@ export default function About() {
             <div className="relative w-full lg:w-[52%] shrink-0">
               {/* Skill Tree title */}
               <h3
-                className="absolute top-3 left-4 z-10 text-foreground/70 text-sm font-normal"
+                className="absolute top-3 left-4 z-10 text-foreground/70 text-lg font-normal"
                 style={{ fontFamily: "'Instrument Serif', serif" }}
               >
                 Skill Tree
@@ -191,25 +196,27 @@ export default function About() {
                 </div>
               )}
 
-              {/* AI Creator Agent card */}
-              <div className="rounded-xl p-4 mt-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                <h4 className="text-foreground text-sm font-medium mb-2 leading-snug">
-                  创作者经验产品化实践：AI Creator Agent
-                </h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">
-                  将优秀创作者的选题经验与热点判断逻辑沉淀为 AI Agent，帮助不同类型账号评估热点适配度并生成内容策略。
-                </p>
-                <div className="flex justify-end mt-3">
-                  <a
-                    href="https://claude.ai/share/ea946a5f-c84a-4813-bbb1-14c34b05c898"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-300/80 text-xs hover:text-blue-200 transition-colors"
-                  >
-                    case展示 →
-                  </a>
+              {/* AI Creator Agent card - shows with 用户需求洞察 group */}
+              {activeDetail?.title === '基于用户反馈推动AI创作功能上线' && (
+                <div className="rounded-xl p-4 mt-4 animate-fade-rise" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <h4 className="text-foreground text-sm font-medium mb-2 leading-snug">
+                    创作者经验产品化实践：AI Creator Agent
+                  </h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed">
+                    将优秀创作者的选题经验与热点判断逻辑沉淀为 AI Agent，帮助不同类型账号评估热点适配度并生成内容策略。
+                  </p>
+                  <div className="flex justify-end mt-3">
+                    <a
+                      href="https://claude.ai/share/ea946a5f-c84a-4813-bbb1-14c34b05c898"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-300/80 text-xs hover:text-blue-200 transition-colors"
+                    >
+                      case展示 →
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
