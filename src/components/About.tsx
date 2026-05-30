@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 
 type SkillDetail = {
   title: string
@@ -41,20 +41,39 @@ const detailGroups: Record<string, SkillDetail> = {
 
 const linkToWork = ['内容质量判断与创作', '社媒运营', '英语/日语']
 
+// Default positions (percentage based)
+const defaultPositions: Record<string, { x: number; y: number }> = {
+  '创作者运营': { x: 42, y: 8 },
+  '用户需求洞察': { x: 2, y: 21 },
+  '社媒运营': { x: 70, y: 21 },
+  '英语/日语': { x: 2, y: 35 },
+  '产品功能落地': { x: 35, y: 35 },
+  '活动策划执行': { x: 70, y: 35 },
+  'AI工具提效': { x: 6, y: 50 },
+  '数据驱动': { x: 65, y: 50 },
+  '跨团队协作': { x: 2, y: 64 },
+  '内容质量判断与创作': { x: 58, y: 64 },
+}
+
 export default function About() {
   const [activeDetail, setActiveDetail] = useState<SkillDetail | null>(null)
+  const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>(() => {
+    const saved = localStorage.getItem('skill-tree-positions')
+    return saved ? JSON.parse(saved) : defaultPositions
+  })
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const skills: { name: string; highlight?: boolean }[] = [
-    { name: '创作者运营', highlight: true },       // [0] Row 1: top center
-    { name: '用户需求洞察', highlight: true },     // [1] Row 2: left
-    { name: '社媒运营' },                          // [2] Row 2: right
-    { name: '英语/日语' },                         // [3] Row 3: left
-    { name: '产品功能落地', highlight: true },     // [4] Row 3: center
-    { name: '活动策划执行' },                      // [5] Row 3: right
-    { name: 'AI工具提效', highlight: true },       // [6] Row 4: left
-    { name: '数据驱动', highlight: true },         // [7] Row 4: right
-    { name: '跨团队协作', highlight: true },       // [8] Row 5: left
-    { name: '内容质量判断与创作' },                // [9] Row 5: right
+    { name: '创作者运营', highlight: true },
+    { name: '用户需求洞察', highlight: true },
+    { name: '社媒运营' },
+    { name: '英语/日语' },
+    { name: '产品功能落地', highlight: true },
+    { name: '活动策划执行' },
+    { name: 'AI工具提效', highlight: true },
+    { name: '数据驱动', highlight: true },
+    { name: '跨团队协作', highlight: true },
+    { name: '内容质量判断与创作' },
   ]
 
   const handleClick = (name: string) => {
@@ -68,6 +87,17 @@ export default function About() {
       setActiveDetail(detailGroups[name])
     }
   }
+
+  // Save positions to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('skill-tree-positions', JSON.stringify(positions))
+  }, [positions])
+
+  // Log positions to console for hardcoding later
+  const logPositions = useCallback(() => {
+    console.log('=== Skill Tree Positions ===')
+    console.log(JSON.stringify(positions, null, 2))
+  }, [positions])
 
   return (
     <section id="about" className="relative z-10 min-h-screen flex items-center py-32 px-6">
@@ -124,8 +154,8 @@ export default function About() {
         {/* Skill Tree section */}
         <div className="card-glass rounded-2xl p-6">
           <div className="flex flex-col lg:flex-row gap-5 items-start">
-            {/* Tree image with nodes - following reference image layout */}
-            <div className="relative w-full lg:w-[52%] shrink-0">
+            {/* Tree image with draggable nodes */}
+            <div className="relative w-full lg:w-[52%] shrink-0" ref={containerRef}>
               <img
                 src="/skill-tree-bg.png"
                 alt=""
@@ -133,37 +163,33 @@ export default function About() {
                 draggable={false}
               />
 
-              {/* Skill nodes - layout matching reference:
-                  Row 1: center-right (创作者运营)
-                  Row 2: left (用户需求洞察) + right (社媒运营)
-                  Row 3: left (产品功能落地) + center-right (活动策划执行)
-                  Row 4: left (AI工具提效) + center-right (数据驱动)
-                  Row 5: left (跨团队协作) + center-right (内容质量判断与创作)
-                  英语/日语 tucked in
-              */}
+              {/* Draggable skill nodes */}
               <div className="absolute inset-0">
                 <div className="relative w-full h-full">
-                  {/* Row 1 - top center-right */}
-                  <SkillNode name={skills[0].name} highlight={skills[0].highlight} active={activeDetail?.title === detailGroups[skills[0].name]?.title} onClick={() => handleClick(skills[0].name)} className="absolute top-[8%] left-[42%]" />
-
-                  {/* Row 2 - left & right */}
-                  <SkillNode name={skills[1].name} highlight={skills[1].highlight} active={activeDetail?.title === detailGroups[skills[1].name]?.title} onClick={() => handleClick(skills[1].name)} className="absolute top-[21%] left-[2%]" />
-                  <SkillNode name={skills[2].name} highlight={skills[2].highlight} active={false} onClick={() => handleClick(skills[2].name)} className="absolute top-[21%] right-[2%]" />
-
-                  {/* Row 3 - THREE across: left + center + right */}
-                  <SkillNode name={skills[3].name} highlight={skills[3].highlight} active={false} onClick={() => handleClick(skills[3].name)} className="absolute top-[35%] left-[2%]" />
-                  <SkillNode name={skills[4].name} highlight={skills[4].highlight} active={activeDetail?.title === detailGroups[skills[4].name]?.title} onClick={() => handleClick(skills[4].name)} className="absolute top-[35%] left-[35%]" />
-                  <SkillNode name={skills[5].name} highlight={skills[5].highlight} active={false} onClick={() => handleClick(skills[5].name)} className="absolute top-[35%] right-[2%]" />
-
-                  {/* Row 4 - left & right */}
-                  <SkillNode name={skills[6].name} highlight={skills[6].highlight} active={activeDetail?.title === detailGroups[skills[6].name]?.title} onClick={() => handleClick(skills[6].name)} className="absolute top-[50%] left-[6%]" />
-                  <SkillNode name={skills[7].name} highlight={skills[7].highlight} active={activeDetail?.title === detailGroups[skills[7].name]?.title} onClick={() => handleClick(skills[7].name)} className="absolute top-[50%] right-[6%]" />
-
-                  {/* Row 5 - left & right */}
-                  <SkillNode name={skills[8].name} highlight={skills[8].highlight} active={activeDetail?.title === detailGroups[skills[8].name]?.title} onClick={() => handleClick(skills[8].name)} className="absolute top-[64%] left-[2%]" />
-                  <SkillNode name={skills[9].name} highlight={skills[9].highlight} active={false} onClick={() => handleClick(skills[9].name)} className="absolute top-[64%] right-[2%]" />
+                  {skills.map((skill) => (
+                    <DraggableSkillNode
+                      key={skill.name}
+                      name={skill.name}
+                      highlight={skill.highlight}
+                      active={activeDetail?.title === detailGroups[skill.name]?.title}
+                      position={positions[skill.name] || { x: 50, y: 50 }}
+                      onPositionChange={(pos) => {
+                        setPositions(prev => ({ ...prev, [skill.name]: pos }))
+                      }}
+                      onClick={() => handleClick(skill.name)}
+                      containerRef={containerRef}
+                    />
+                  ))}
                 </div>
               </div>
+
+              {/* Dev button to log positions */}
+              <button
+                onClick={logPositions}
+                className="absolute bottom-2 right-2 text-[9px] text-white/40 hover:text-white/80 bg-black/30 rounded px-2 py-0.5 z-50"
+              >
+                Log Positions
+              </button>
             </div>
 
             {/* Detail panel - right */}
@@ -202,18 +228,73 @@ export default function About() {
   )
 }
 
-function SkillNode({ name, highlight, active, onClick, className }: {
+function DraggableSkillNode({
+  name,
+  highlight,
+  active,
+  position,
+  onPositionChange,
+  onClick,
+  containerRef,
+}: {
   name: string
   highlight?: boolean
   active?: boolean
+  position: { x: number; y: number }
+  onPositionChange: (pos: { x: number; y: number }) => void
   onClick: () => void
-  className?: string
+  containerRef: React.RefObject<HTMLDivElement | null>
 }) {
+  const nodeRef = useRef<HTMLDivElement>(null)
+  const isDragging = useRef(false)
+  const hasMoved = useRef(false)
+  const startPos = useRef({ x: 0, y: 0 })
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    isDragging.current = true
+    hasMoved.current = false
+    startPos.current = { x: e.clientX, y: e.clientY }
+    nodeRef.current?.setPointerCapture(e.pointerId)
+    e.preventDefault()
+  }
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDragging.current || !containerRef.current) return
+
+    const dx = Math.abs(e.clientX - startPos.current.x)
+    const dy = Math.abs(e.clientY - startPos.current.y)
+    if (dx > 3 || dy > 3) hasMoved.current = true
+
+    const rect = containerRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+
+    // Clamp within bounds
+    const clampedX = Math.max(0, Math.min(95, x))
+    const clampedY = Math.max(0, Math.min(95, y))
+
+    onPositionChange({ x: clampedX, y: clampedY })
+  }
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    isDragging.current = false
+    nodeRef.current?.releasePointerCapture(e.pointerId)
+    if (!hasMoved.current) {
+      onClick()
+    }
+  }
+
   return (
-    <div className={className}>
-      <button
-        onClick={onClick}
-        className={`rounded-full px-3 py-1 sm:px-4 sm:py-1.5 transition-all duration-300 hover:scale-110 cursor-pointer ${active ? 'scale-105' : ''}`}
+    <div
+      ref={nodeRef}
+      className="absolute touch-none"
+      style={{ left: `${position.x}%`, top: `${position.y}%`, transform: 'translate(-50%, -50%)' }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+    >
+      <div
+        className={`rounded-full px-3 py-1 sm:px-4 sm:py-1.5 transition-shadow duration-300 cursor-grab active:cursor-grabbing select-none ${active ? 'scale-105' : ''}`}
         style={highlight ? {
           background: active ? 'rgba(99, 140, 255, 0.3)' : 'rgba(99, 140, 255, 0.15)',
           backdropFilter: 'blur(20px)',
@@ -233,7 +314,7 @@ function SkillNode({ name, highlight, active, onClick, className }: {
         <span className={`text-[10px] sm:text-xs font-medium whitespace-nowrap ${highlight ? 'text-blue-200' : 'text-white/80'}`}>
           {name}
         </span>
-      </button>
+      </div>
     </div>
   )
 }
