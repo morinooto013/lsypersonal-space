@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 type SkillDetail = {
   title: string
@@ -93,12 +93,6 @@ export default function About() {
     localStorage.setItem('skill-tree-positions', JSON.stringify(positions))
   }, [positions])
 
-  // Log positions to console for hardcoding later
-  const logPositions = useCallback(() => {
-    console.log('=== Skill Tree Positions ===')
-    console.log(JSON.stringify(positions, null, 2))
-  }, [positions])
-
   return (
     <section id="about" className="relative z-10 min-h-screen flex items-center py-32 px-6">
       <div className="max-w-5xl mx-auto w-full">
@@ -184,12 +178,6 @@ export default function About() {
               </div>
 
               {/* Dev button to log positions */}
-              <button
-                onClick={logPositions}
-                className="absolute bottom-2 right-2 text-[9px] text-white/40 hover:text-white/80 bg-black/30 rounded px-2 py-0.5 z-50"
-              >
-                Log Positions
-              </button>
             </div>
 
             {/* Detail panel - right */}
