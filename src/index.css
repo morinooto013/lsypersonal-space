@@ -112,6 +112,11 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.15), 0 4px 24px rgba(0, 0, 0, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), 0 4px 24px rgba(0, 0, 0, 0.3); }
+  }
+
   .animate-fade-rise          { animation: fade-rise 0.8s ease-out both; }
   .animate-fade-rise-delay    { animation: fade-rise 0.8s ease-out 0.2s both; }
   .animate-fade-rise-delay-2  { animation: fade-rise 0.8s ease-out 0.4s both; }
