@@ -45,16 +45,16 @@ export default function About() {
   const [activeDetail, setActiveDetail] = useState<SkillDetail | null>(null)
 
   const skills: { name: string; highlight?: boolean }[] = [
-    { name: '创作者运营', highlight: true },
-    { name: '用户需求洞察', highlight: true },
-    { name: '社媒运营' },
-    { name: '产品功能落地', highlight: true },
-    { name: '活动策划执行' },
-    { name: 'AI工具提效', highlight: true },
-    { name: '数据驱动', highlight: true },
-    { name: '跨团队协作', highlight: true },
-    { name: '内容质量判断与创作' },
-    { name: '英语/日语' },
+    { name: '创作者运营', highlight: true },       // [0] Row 1: top center
+    { name: '用户需求洞察', highlight: true },     // [1] Row 2: left
+    { name: '社媒运营' },                          // [2] Row 2: right
+    { name: '英语/日语' },                         // [3] Row 3: left
+    { name: '产品功能落地', highlight: true },     // [4] Row 3: center
+    { name: '活动策划执行' },                      // [5] Row 3: right
+    { name: 'AI工具提效', highlight: true },       // [6] Row 4: left
+    { name: '数据驱动', highlight: true },         // [7] Row 4: right
+    { name: '跨团队协作', highlight: true },       // [8] Row 5: left
+    { name: '内容质量判断与创作' },                // [9] Row 5: right
   ]
 
   const handleClick = (name: string) => {
@@ -144,26 +144,24 @@ export default function About() {
               <div className="absolute inset-0">
                 <div className="relative w-full h-full">
                   {/* Row 1 - top center-right */}
-                  <SkillNode name={skills[0].name} highlight={skills[0].highlight} active={activeDetail?.title === detailGroups[skills[0].name]?.title} onClick={() => handleClick(skills[0].name)} className="absolute top-[8%] left-[38%]" />
+                  <SkillNode name={skills[0].name} highlight={skills[0].highlight} active={activeDetail?.title === detailGroups[skills[0].name]?.title} onClick={() => handleClick(skills[0].name)} className="absolute top-[8%] left-[42%]" />
 
                   {/* Row 2 - left & right */}
-                  <SkillNode name={skills[1].name} highlight={skills[1].highlight} active={activeDetail?.title === detailGroups[skills[1].name]?.title} onClick={() => handleClick(skills[1].name)} className="absolute top-[20%] left-[4%]" />
-                  <SkillNode name={skills[2].name} highlight={skills[2].highlight} active={false} onClick={() => handleClick(skills[2].name)} className="absolute top-[20%] right-[4%]" />
+                  <SkillNode name={skills[1].name} highlight={skills[1].highlight} active={activeDetail?.title === detailGroups[skills[1].name]?.title} onClick={() => handleClick(skills[1].name)} className="absolute top-[21%] left-[2%]" />
+                  <SkillNode name={skills[2].name} highlight={skills[2].highlight} active={false} onClick={() => handleClick(skills[2].name)} className="absolute top-[21%] right-[2%]" />
 
-                  {/* Row 3 - left & center-right */}
-                  <SkillNode name={skills[3].name} highlight={skills[3].highlight} active={activeDetail?.title === detailGroups[skills[3].name]?.title} onClick={() => handleClick(skills[3].name)} className="absolute top-[34%] left-[20%]" />
-                  <SkillNode name={skills[4].name} highlight={skills[4].highlight} active={false} onClick={() => handleClick(skills[4].name)} className="absolute top-[34%] right-[4%]" />
+                  {/* Row 3 - THREE across: left + center + right */}
+                  <SkillNode name={skills[3].name} highlight={skills[3].highlight} active={false} onClick={() => handleClick(skills[3].name)} className="absolute top-[35%] left-[2%]" />
+                  <SkillNode name={skills[4].name} highlight={skills[4].highlight} active={activeDetail?.title === detailGroups[skills[4].name]?.title} onClick={() => handleClick(skills[4].name)} className="absolute top-[35%] left-[35%]" />
+                  <SkillNode name={skills[5].name} highlight={skills[5].highlight} active={false} onClick={() => handleClick(skills[5].name)} className="absolute top-[35%] right-[2%]" />
 
-                  {/* Row 4 - left & center-right */}
-                  <SkillNode name={skills[5].name} highlight={skills[5].highlight} active={activeDetail?.title === detailGroups[skills[5].name]?.title} onClick={() => handleClick(skills[5].name)} className="absolute top-[48%] left-[4%]" />
-                  <SkillNode name={skills[6].name} highlight={skills[6].highlight} active={activeDetail?.title === detailGroups[skills[6].name]?.title} onClick={() => handleClick(skills[6].name)} className="absolute top-[48%] right-[8%]" />
+                  {/* Row 4 - left & right */}
+                  <SkillNode name={skills[6].name} highlight={skills[6].highlight} active={activeDetail?.title === detailGroups[skills[6].name]?.title} onClick={() => handleClick(skills[6].name)} className="absolute top-[50%] left-[6%]" />
+                  <SkillNode name={skills[7].name} highlight={skills[7].highlight} active={activeDetail?.title === detailGroups[skills[7].name]?.title} onClick={() => handleClick(skills[7].name)} className="absolute top-[50%] right-[6%]" />
 
-                  {/* Row 5 - left & center-right */}
-                  <SkillNode name={skills[7].name} highlight={skills[7].highlight} active={activeDetail?.title === detailGroups[skills[7].name]?.title} onClick={() => handleClick(skills[7].name)} className="absolute top-[61%] left-[8%]" />
-                  <SkillNode name={skills[8].name} highlight={skills[8].highlight} active={false} onClick={() => handleClick(skills[8].name)} className="absolute top-[61%] right-[4%]" />
-
-                  {/* 英语/日语 - bottom left area */}
-                  <SkillNode name={skills[9].name} highlight={skills[9].highlight} active={false} onClick={() => handleClick(skills[9].name)} className="absolute top-[73%] left-[4%]" />
+                  {/* Row 5 - left & right */}
+                  <SkillNode name={skills[8].name} highlight={skills[8].highlight} active={activeDetail?.title === detailGroups[skills[8].name]?.title} onClick={() => handleClick(skills[8].name)} className="absolute top-[64%] left-[2%]" />
+                  <SkillNode name={skills[9].name} highlight={skills[9].highlight} active={false} onClick={() => handleClick(skills[9].name)} className="absolute top-[64%] right-[2%]" />
                 </div>
               </div>
             </div>
