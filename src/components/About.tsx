@@ -155,6 +155,10 @@ export default function About() {
                 alt=""
                 className="w-full h-auto block rounded-xl select-none"
                 draggable={false}
+                style={{
+                  maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,0.85) 35%, black 50%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,0.85) 35%, black 50%)',
+                }}
               />
 
               {/* Draggable skill nodes */}
