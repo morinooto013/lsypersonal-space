@@ -77,12 +77,13 @@ export default function About() {
           About
         </h2>
 
-        <div className="flex flex-col sm:flex-row gap-8 items-stretch">
+        {/* Top row: Avatar + Education card, same height */}
+        <div className="flex flex-col sm:flex-row gap-6 items-stretch mb-6">
 
-          {/* Avatar column */}
-          <div className="shrink-0 flex flex-col items-center sm:items-center gap-3 sm:w-44">
+          {/* Avatar - smaller, matches right card height */}
+          <div className="shrink-0 sm:w-36">
             <div
-              className="relative rounded-2xl overflow-hidden w-full"
+              className="relative rounded-2xl overflow-hidden w-full h-full"
               style={{
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.18)',
@@ -92,97 +93,96 @@ export default function About() {
               <img
                 src="/avatar.jpg"
                 alt="林思懿"
-                className="w-full object-cover block"
-                style={{ aspectRatio: '3/4' }}
+                className="w-full h-full object-cover block"
               />
             </div>
           </div>
 
-          {/* Cards column */}
-          <div className="flex-1 flex flex-col gap-5">
-
-            {/* Education */}
-            <div className="card-glass rounded-2xl p-6">
-              <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>教育背景</h3>
-              <div className="space-y-4">
-                <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
-                  <div>
-                    <p className="text-foreground text-sm">北京大学 · 日语笔译 · 全日制硕士</p>
-                    <p className="text-muted-foreground text-xs mt-1">GPA：3.83/4.0 · 已出版译著 2 部 · 获 2024-2025 学年度研究生"科学实践创新"奖及奖学金</p>
-                  </div>
-                  <span className="text-muted-foreground text-xs whitespace-nowrap">2023.09 – 2025.06</span>
+          {/* Education card */}
+          <div className="flex-1 card-glass rounded-2xl p-6">
+            <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>教育背景</h3>
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <div>
+                  <p className="text-foreground text-sm">北京大学 · 日语笔译 · 全日制硕士</p>
+                  <p className="text-muted-foreground text-xs mt-1">GPA：3.83/4.0 · 已出版译著 2 部 · 获 2024-2025 学年度研究生"科学实践创新"奖及奖学金</p>
                 </div>
-                <div className="border-t border-white/10" />
-                <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
-                  <p className="text-muted-foreground text-sm">浙江农林大学 · 城市管理 · 全日制本科</p>
-                  <span className="text-muted-foreground text-xs whitespace-nowrap">2019.09 – 2023.06</span>
+                <span className="text-muted-foreground text-xs whitespace-nowrap">2023.09 – 2025.06</span>
+              </div>
+              <div className="border-t border-white/10" />
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
+                <p className="text-muted-foreground text-sm">浙江农林大学 · 城市管理 · 全日制本科</p>
+                <span className="text-muted-foreground text-xs whitespace-nowrap">2019.09 – 2023.06</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Skill Tree section */}
+        <div className="card-glass rounded-2xl p-6">
+          <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>个人技能</h3>
+
+          <div className="flex flex-col lg:flex-row gap-5 items-start">
+            {/* Tree image with nodes - left */}
+            <div className="relative w-full lg:w-[52%] shrink-0">
+              <img
+                src="/skill-tree-bg.png"
+                alt=""
+                className="w-full h-auto block rounded-xl select-none"
+                draggable={false}
+              />
+
+              {/* Skill nodes - evenly distributed on leaves, not on trunk */}
+              <div className="absolute inset-0">
+                <div className="relative w-full h-full">
+                  {/* Top canopy */}
+                  <SkillNode name={skills[0].name} highlight={skills[0].highlight} active={activeDetail?.title === detailGroups[skills[0].name]?.title} onClick={() => handleClick(skills[0].name)} className="absolute top-[8%] left-[40%]" />
+
+                  {/* Upper left & right branches */}
+                  <SkillNode name={skills[1].name} highlight={skills[1].highlight} active={activeDetail?.title === detailGroups[skills[1].name]?.title} onClick={() => handleClick(skills[1].name)} className="absolute top-[20%] left-[8%]" />
+                  <SkillNode name={skills[2].name} highlight={skills[2].highlight} active={false} onClick={() => handleClick(skills[2].name)} className="absolute top-[18%] right-[6%]" />
+
+                  {/* Mid section */}
+                  <SkillNode name={skills[3].name} highlight={skills[3].highlight} active={activeDetail?.title === detailGroups[skills[3].name]?.title} onClick={() => handleClick(skills[3].name)} className="absolute top-[32%] left-[22%]" />
+                  <SkillNode name={skills[4].name} highlight={skills[4].highlight} active={false} onClick={() => handleClick(skills[4].name)} className="absolute top-[30%] right-[8%]" />
+
+                  {/* Mid-lower */}
+                  <SkillNode name={skills[5].name} highlight={skills[5].highlight} active={activeDetail?.title === detailGroups[skills[5].name]?.title} onClick={() => handleClick(skills[5].name)} className="absolute top-[43%] left-[4%]" />
+                  <SkillNode name={skills[6].name} highlight={skills[6].highlight} active={activeDetail?.title === detailGroups[skills[6].name]?.title} onClick={() => handleClick(skills[6].name)} className="absolute top-[44%] right-[12%]" />
+
+                  {/* Lower branches */}
+                  <SkillNode name={skills[7].name} highlight={skills[7].highlight} active={activeDetail?.title === detailGroups[skills[7].name]?.title} onClick={() => handleClick(skills[7].name)} className="absolute top-[55%] left-[14%]" />
+                  <SkillNode name={skills[8].name} highlight={skills[8].highlight} active={false} onClick={() => handleClick(skills[8].name)} className="absolute top-[56%] right-[4%]" />
+
+                  {/* Bottom leaves - above trunk */}
+                  <SkillNode name={skills[9].name} highlight={skills[9].highlight} active={false} onClick={() => handleClick(skills[9].name)} className="absolute top-[66%] left-[6%]" />
                 </div>
               </div>
             </div>
 
-            {/* Skill Tree - replaces 个人技能 */}
-            <div className="card-glass rounded-2xl p-6">
-              <h3 className="text-foreground text-lg font-normal mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>个人技能</h3>
-
-              <div className="flex flex-col lg:flex-row gap-4 items-start">
-                {/* Tree image with nodes */}
-                <div className="relative w-full lg:w-[55%] shrink-0">
-                  <img
-                    src="/skill-tree-bg.png"
-                    alt=""
-                    className="w-full h-auto block rounded-xl select-none"
-                    draggable={false}
-                  />
-
-                  {/* Skill nodes */}
-                  <div className="absolute inset-0">
-                    <div className="relative w-full h-full">
-                      <SkillNode name={skills[0].name} highlight={skills[0].highlight} active={activeDetail?.title === detailGroups[skills[0].name]?.title} onClick={() => handleClick(skills[0].name)} className="absolute top-[13%] left-[42%]" />
-                      <SkillNode name={skills[1].name} highlight={skills[1].highlight} active={activeDetail?.title === detailGroups[skills[1].name]?.title} onClick={() => handleClick(skills[1].name)} className="absolute top-[25%] left-[12%]" />
-                      <SkillNode name={skills[2].name} highlight={skills[2].highlight} active={false} onClick={() => handleClick(skills[2].name)} className="absolute top-[24%] right-[10%]" />
-                      <SkillNode name={skills[3].name} highlight={skills[3].highlight} active={activeDetail?.title === detailGroups[skills[3].name]?.title} onClick={() => handleClick(skills[3].name)} className="absolute top-[37%] left-[30%]" />
-                      <SkillNode name={skills[4].name} highlight={skills[4].highlight} active={false} onClick={() => handleClick(skills[4].name)} className="absolute top-[36%] right-[8%]" />
-                      <SkillNode name={skills[5].name} highlight={skills[5].highlight} active={activeDetail?.title === detailGroups[skills[5].name]?.title} onClick={() => handleClick(skills[5].name)} className="absolute top-[49%] left-[8%]" />
-                      <SkillNode name={skills[6].name} highlight={skills[6].highlight} active={activeDetail?.title === detailGroups[skills[6].name]?.title} onClick={() => handleClick(skills[6].name)} className="absolute top-[50%] right-[14%]" />
-                      <SkillNode name={skills[7].name} highlight={skills[7].highlight} active={activeDetail?.title === detailGroups[skills[7].name]?.title} onClick={() => handleClick(skills[7].name)} className="absolute top-[62%] left-[18%]" />
-                      <SkillNode name={skills[8].name} highlight={skills[8].highlight} active={false} onClick={() => handleClick(skills[8].name)} className="absolute top-[61%] right-[10%]" />
-                      <SkillNode name={skills[9].name} highlight={skills[9].highlight} active={false} onClick={() => handleClick(skills[9].name)} className="absolute top-[73%] left-[35%]" />
-                    </div>
+            {/* Detail panel - right */}
+            <div className="w-full lg:w-[48%]">
+              {activeDetail ? (
+                <div className="rounded-xl p-4 animate-fade-rise" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <h4 className="text-foreground text-sm font-medium mb-3 leading-snug">
+                    {activeDetail.title}
+                  </h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed mb-3">
+                    {activeDetail.desc}
+                  </p>
+                  <div className="border-t border-white/10 pt-2.5">
+                    <p className="text-foreground/80 text-xs leading-relaxed">
+                      <span className="text-foreground/60 text-[10px] mr-1.5">成果</span>
+                      {activeDetail.result}
+                    </p>
                   </div>
                 </div>
-
-                {/* Detail panel */}
-                <div className="w-full lg:w-[45%]">
-                  {activeDetail ? (
-                    <div className="rounded-xl p-4 animate-fade-rise" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                      <h4 className="text-foreground text-sm font-medium mb-3 leading-snug">
-                        {activeDetail.title}
-                      </h4>
-                      <p className="text-muted-foreground text-xs leading-relaxed mb-3">
-                        {activeDetail.desc}
-                      </p>
-                      <div className="border-t border-white/10 pt-2.5">
-                        <p className="text-foreground/80 text-xs leading-relaxed">
-                          <span className="text-foreground/60 text-[10px] mr-1.5">成果</span>
-                          {activeDetail.result}
-                        </p>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="rounded-xl p-4 opacity-50" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                      <p className="text-muted-foreground text-xs">点击能力标签查看项目详情</p>
-                    </div>
-                  )}
+              ) : (
+                <div className="rounded-xl p-4 opacity-50" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                  <p className="text-muted-foreground text-xs">点击能力标签查看项目详情</p>
                 </div>
-              </div>
+              )}
             </div>
-
-            {/* Profile */}
-            <div className="card-glass rounded-2xl p-6 space-y-2.5 text-sm text-muted-foreground leading-relaxed">
-              <p>・具备 AI 产品理解与内容运营的复合背景，能够快速拆解产品逻辑，并转化为清晰易懂的内容表达。</p>
-              <p>・具备创作者生态与内容增长经验，擅长基于用户行为与数据反馈迭代内容策略，并实现站外曝光向业务转化的有效承接。</p>
-            </div>
-
           </div>
         </div>
 
