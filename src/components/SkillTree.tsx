@@ -23,43 +23,38 @@ export default function SkillTree() {
           Skill Tree
         </h2>
 
-        {/* Tree with background image */}
-        <div className="relative w-full">
+        {/* Tree with background image - slightly smaller */}
+        <div className="relative w-full max-w-3xl mx-auto">
           <img
             src="/skill-tree-bg.png"
             alt=""
-            className="w-full h-auto block select-none"
+            className="w-full h-auto block rounded-2xl select-none"
             draggable={false}
-            style={{
-              minHeight: '420px',
-              objectFit: 'contain',
-              mixBlendMode: 'lighten',
-            }}
           />
 
-          {/* Skill nodes scattered across the tree canopy */}
+          {/* Skill nodes tightly packed on the tree canopy */}
           <div className="absolute inset-0">
             <div className="relative w-full h-full">
 
-              {/* Top area */}
-              <SkillNode name={skills[0]} className="absolute top-[12%] left-1/2 -translate-x-1/2" />
+              {/* Row 1 - top */}
+              <SkillNode name={skills[0]} className="absolute top-[14%] left-1/2 -translate-x-1/2" />
 
-              {/* Upper-mid */}
-              <SkillNode name={skills[1]} className="absolute top-[22%] left-[16%]" />
-              <SkillNode name={skills[2]} className="absolute top-[20%] right-[16%]" />
+              {/* Row 2 */}
+              <SkillNode name={skills[1]} className="absolute top-[26%] left-[12%]" />
+              <SkillNode name={skills[2]} className="absolute top-[26%] right-[12%]" />
 
-              {/* Mid - widest canopy */}
-              <SkillNode name={skills[3]} className="absolute top-[36%] left-[6%]" />
-              <SkillNode name={skills[4]} className="absolute top-[34%] left-1/2 -translate-x-1/2" />
-              <SkillNode name={skills[5]} className="absolute top-[36%] right-[6%]" />
+              {/* Row 3 - widest */}
+              <SkillNode name={skills[3]} className="absolute top-[40%] left-[4%]" />
+              <SkillNode name={skills[4]} className="absolute top-[40%] left-1/2 -translate-x-1/2" />
+              <SkillNode name={skills[5]} className="absolute top-[40%] right-[4%]" />
 
-              {/* Lower-mid */}
-              <SkillNode name={skills[6]} className="absolute top-[50%] left-[14%]" />
-              <SkillNode name={skills[7]} className="absolute top-[50%] right-[14%]" />
+              {/* Row 4 */}
+              <SkillNode name={skills[6]} className="absolute top-[54%] left-[12%]" />
+              <SkillNode name={skills[7]} className="absolute top-[54%] right-[12%]" />
 
-              {/* Lower canopy */}
-              <SkillNode name={skills[8]} className="absolute top-[64%] left-[20%]" />
-              <SkillNode name={skills[9]} className="absolute top-[64%] right-[18%]" />
+              {/* Row 5 */}
+              <SkillNode name={skills[8]} className="absolute top-[66%] left-[16%]" />
+              <SkillNode name={skills[9]} className="absolute top-[66%] right-[14%]" />
 
             </div>
           </div>
@@ -74,7 +69,7 @@ function SkillNode({ name, className }: { name: string; className?: string }) {
   return (
     <div className={className}>
       <div
-        className="rounded-full px-4 py-1.5 sm:px-5 sm:py-2 transition-all duration-300 hover:scale-105 cursor-default"
+        className="rounded-full px-3.5 py-1.5 sm:px-4 sm:py-1.5 transition-all duration-300 hover:scale-105 cursor-default"
         style={{
           background: 'rgba(255, 255, 255, 0.08)',
           backdropFilter: 'blur(20px)',
