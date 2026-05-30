@@ -39,7 +39,7 @@ const detailGroups: Record<string, SkillDetail> = {
   },
 }
 
-const linkToWork = ['内容质量判断与创作', '社媒运营', '英语/日语']
+const linkToWork = ['内容质量判断与创作', '英语/日语']
 
 // Default positions (percentage based)
 const defaultPositions: Record<string, { x: number; y: number }> = {
@@ -77,7 +77,7 @@ export default function About() {
   ]
 
   const handleClick = (name: string) => {
-    if (name === '活动策划执行') {
+    if (name === '活动策划执行' || name === '社媒运营') {
       document.querySelector('#work-events')?.scrollIntoView({ behavior: 'smooth' })
       setActiveDetail(null)
     } else if (linkToWork.includes(name)) {
