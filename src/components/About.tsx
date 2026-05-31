@@ -203,7 +203,7 @@ export default function About() {
                     创作者经验产品化实践：AI Creator Agent
                   </h4>
                   <p className="text-muted-foreground text-xs leading-relaxed">
-                    将优秀创作者的选题经验与热点判断逻辑沉淀为 AI Agent，帮助不同类型账号评估热点适配度并生成内容策略。
+                    将优秀创作者的选题经验与热点判断逻辑沉淀为 AI 工作流，帮助不同类型账号评估热点适配度并生成内容策略。
                   </p>
                   <div className="flex justify-end mt-3">
                     <a
