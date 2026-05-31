@@ -224,14 +224,14 @@ export default function About() {
         {/* Video showcase - shows when AI工具提效 is active */}
         {activeDetail?.title === '海外社媒矩阵与AI驱动内容放大体系设计' && (
           <div className="card-glass rounded-2xl p-4 mt-6 animate-fade-rise">
-            <div className="flex gap-2 items-stretch">
-              {/* Left: 3 landscape videos stacked, matching portrait height */}
-              <div className="flex flex-col gap-2 w-[60%]">
+            <div className="flex gap-2" style={{ height: '500px' }}>
+              {/* Left: 3 landscape videos stacked, equal height */}
+              <div className="flex flex-col gap-2 h-full" style={{ width: '55%' }}>
                 {[4, 3, 1].map((i) => (
                   <video
                     key={i}
                     src={`/showcase-${i}.mp4`}
-                    className="w-full rounded-lg"
+                    className="w-full rounded-lg object-contain flex-1 min-h-0"
                     controls
                     muted
                     playsInline
@@ -239,11 +239,11 @@ export default function About() {
                   />
                 ))}
               </div>
-              {/* Right: 1 portrait video */}
-              <div className="w-[40%] shrink-0">
+              {/* Right: 1 portrait video, same height */}
+              <div className="h-full" style={{ width: '45%' }}>
                 <video
                   src="/showcase-2.mp4"
-                  className="w-full rounded-lg"
+                  className="h-full w-full rounded-lg object-contain"
                   controls
                   muted
                   playsInline
