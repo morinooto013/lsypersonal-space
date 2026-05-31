@@ -7,7 +7,11 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(cp \"/c/Users/linsi/Downloads/vidu-image-3314508155451694.png\" \"/c/Users/linsi/lsyspace/velorah/public/skill-tree-bg.png\")",
-      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('/c/Users/linsi/Downloads/vidu-image-3314520797117965.png'\\); print\\(img.mode, img.size\\)\")"
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('/c/Users/linsi/Downloads/vidu-image-3314520797117965.png'\\); print\\(img.mode, img.size\\)\")",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 public/showcase-1.mp4)",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 public/showcase-2.mp4)",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 public/showcase-3.mp4)",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 public/showcase-4.mp4)"
     ],
     "additionalDirectories": [
       "C:\\Users\\linsi\\Downloads"
