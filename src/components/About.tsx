@@ -221,6 +221,25 @@ export default function About() {
           </div>
         </div>
 
+        {/* Video showcase - shows when AI工具提效 is active */}
+        {activeDetail?.title === '海外社媒矩阵与AI驱动内容放大体系设计' && (
+          <div className="card-glass rounded-2xl p-6 mt-6 animate-fade-rise">
+            <div className="grid grid-cols-2 gap-4">
+              {[1, 2, 3, 4].map((i) => (
+                <video
+                  key={i}
+                  src={`/showcase-${i}.mp4`}
+                  className="w-full rounded-lg"
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   )
