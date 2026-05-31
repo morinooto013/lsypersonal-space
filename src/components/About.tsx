@@ -212,7 +212,7 @@ export default function About() {
                       rel="noopener noreferrer"
                       className="text-blue-300/80 text-xs hover:text-blue-200 transition-colors"
                     >
-                      case展示 →
+                      Case详情 →
                     </a>
                   </div>
                 </div>
